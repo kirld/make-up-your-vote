@@ -1,0 +1,100 @@
+/**********************
+	Global Variables
+***********************/
+
+	/* Color */
+$primary-white: #fff;	
+$primary-blue: #3399cc;
+$primary-pink: #ff0066;
+$primary-green: #99cc33;
+
+	/* Fonts */	
+$paragraph-font-family: 'Roboto';
+$paragraph-small-size: 1rem; /* 16px*/	
+$paragraph-normal-size: 1.125rem; /* 18px*/
+
+$h1-mob: 2.25rem; /* 36px*/
+$h1-tab: 3.75rem; /* 60px*/
+$h1-desk: 5.625rem; /* 90px*/
+
+$h2-mob: 1.5rem;
+$h2-tab: 1.625rem;
+$h2-desk: 1.875rem;
+
+
+/* Position & Float */
+
+$float-right: right;
+$float-left: left;
+$align-right: right;
+$align-left: left;
+
+
+/****************
+	Navigation
+******************/
+
+.main-top-nav{
+	list-style: none;
+}
+
+
+.main-top-nav li{
+	display: inline-block;
+}
+
+.main-top-nav a{
+	font-family: 'Oswald';
+	font-size:  1.25rem;
+	display: block;
+	color: $primary-blue;
+}
+
+.right-nav{
+	text-align: right;
+}
+
+.main-nav-wrap{
+	background-color: $primary-blue;
+}
+
+.main-nav{
+	margin-left: 0;
+	display: flex;
+	justify-content: space-around;
+}
+.main-nav li{
+	list-style: none;
+}
+
+.main-nav a{
+	color: $primary-white;
+}
+
+.soc-icons{
+	text-align: right;
+}
+.soc-icons i{
+	color: $primary-white;
+}
+
+.newsletterInput{
+	width: 66%;
+}
+
+.newsletter-btn{
+	background-color: $primary-green;
+	border: none;
+	display: inline-block;
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
