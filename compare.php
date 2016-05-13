@@ -117,6 +117,11 @@
   .large-12 {
     width: 100%; }
 }
+
+.compare_content {
+	padding: 10px;
+	height: 40%;
+}
 	    </style>
 	</head>
 	<body ng-controller="mainController">
@@ -140,20 +145,13 @@
 			<br><br><br>
 
 			<h3>CATEGORIES</h3>
-			<label for="health"><input type="checkbox" id="health" value="1" checked="checked">Health<label>
-			<label for="taxes"><input type="checkbox" id="taxes" value="2" checked="checked">Taxes<label>
-			<label for="jobs_economy"><input type="checkbox" id="jobs_economy" value="3" checked="checked">Jobs / Economy<label>
-			<label for="democracy"><input type="checkbox" id="democracy" value="4" checked="checked">Democracy<label>
-			<label for="education"><input type="checkbox" id="education" value="5" checked="checked">Education<label>
-			<label for="seniors"><input type="checkbox" id="seniors" value="6" checked="checked">Seniors<label>
-			<label for="environment"><input type="checkbox" id="environment" value="7" checked="checked">Environment<label>
-			<label for="crime"><input type="checkbox" id="crime" value="8" checked="checked">Crime<label>
-			<label for="govt_spending"><input type="checkbox" id="govt_spending" value="9" checked="checked">Govt Spending<label>
-			<label for="immigration"><input type="checkbox" id="immigration" value="10" checked="checked">Immigration<label>
-			<label for="consumers"><input type="checkbox" id="consumers" value="11" checked="checked">Consumers<label>
-			<label for="foreign_policy"><input type="checkbox" id="foreign_policy" value="12" checked="checked">Foreign Policy<label>
-			<label for="arts_and_culture"><input type="checkbox" id="arts_and_culture" value="13" checked="checked">Arts And Culture<label>
-			<label for="families"><input type="checkbox" id="families" value="14" checked="checked">Families<label>
+			<label for="category{{categoryId}}" ng-repeat="(categoryId,categoryName) in compareCategory">
+				<input type="checkbox" id="category{{categoryId}}"  
+						ng-click="includeCategory($index)" checked="checked">
+					{{categoryName}}
+			</label>
+
+			
 		</div>
 
 		<div class="row">
@@ -161,106 +159,15 @@
 			<div class="">
 				<div class="row">
 					<div class="columns medium-3 large-2" ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true">
-						<h4 class="party_name">{{ _content.partyName }}</h4>
-						<div class="count_vote">You agree with:<span class="total">{{_content.counter}}</span></div>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Health</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">				
-						<p>{{ _content.category[0].Health }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Taxes</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Taxes }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Jobs/Economy</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].JobsEconomy }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Democracy</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Democracy }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Education</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Education }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Seniors</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Seniors }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Environment</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Environment }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Crime</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Crime }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Govt Spending</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].GovtSpending }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Immigration</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Immigration }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Consumers</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Consumers }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>ForeignPolicy</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].ForeignPolicy }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>ArtsAndCulture</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].ArtsAndCulture }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
-					</div>
-				</div>
-				<div class="row">
-					<h5>Families</h5>	
-					<div ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true" class="columns medium-3 large-2">
-						<p>{{ _content.category[0].Families }}</p>
-						<button ng-click="countVote(_content)">Agree</button>
+						<div class="compare_head">
+							<h4 class="party_name">{{ _content.partyName }}</h4>
+							<div class="count_vote">You agree with:<span class="total">{{_content.counter}}</span></div>
+						</div>
+						<!-- div class="compare_content" ng-repeat="(_key, _category) in _content.category[0] " -->
+						<div class="compare_content" ng-repeat="(_key, _category) in _content.category[0] ">
+							<strong>{{_key }}</strong>:<br>{{_category}}<br>
+							<button ng-click="countVote(_content)">Agree</button><br><br>
+						</div>
 					</div>
 				</div>
 			</div>
