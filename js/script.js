@@ -1,6 +1,9 @@
 
 var VoteApp = angular.module('VoteApp', ['ngAnimate']);
 // set the assignment due data object to use
+
+compareCategory = ["Health", "Taxes", "Jobs/Economy", "Democracy", "Education", "Seniors", "Environment", "Crime", "GovtSpending", "Immigration", "Consumers", "ForeignPolicy", "ArtsAndCulture","Families"]
+
 comparePartyData = [
 {
     "shortName":"Liberal",
@@ -70,15 +73,36 @@ comparePartyData = [
 
 
 VoteApp.controller('mainController', function($scope) {
-        $scope.comparePartyData = comparePartyData; // set the json data into scope
+    $scope.comparePartyData = comparePartyData; // set the json data into scope
+    $scope.compareCategory = compareCategory;
 
-        var x = 0; // variable for counter
-        $scope.countVote = function(partyNum) { // the button was clicked
-            x++; // add 1
-            partyNum.counter++; //apply to the party
+    var x = 0; // variable for counter
+    $scope.countVote = function(partyNum) { // the button was clicked
+        x++; // add 1
+        partyNum.counter++; //apply to the party
 
-        };
+    };
 
+    // $scope.includeCategory = function(index) {
+    //     //var i = $.inArray($scope.comparePartyData.category[0][index], $scope.includeCategory);
+    //     console.log($scope.comparePartyData.category.index);
+    //     debugger
+    //     if (i > -1) {
+    //         $scope.categoryIncludes.splice(i, 1);
+    //     } else {
+    //         $scope.categoryIncludes.push(category);
+    //     }
+    // };
+
+    // $scope.categoryFilter = function(fruit) {
+    //     if ($scope.categoryIncludes.length > 0) {
+    //         if ($.inArray(fruit.colour, $scope.categoryIncludes) < 0)
+    //             return;
+    //     }
+            
+    //         return fruit;
+        
+    // };
 
 
 });
