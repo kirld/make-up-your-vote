@@ -5,8 +5,9 @@
 	/* Color */
 $primary-white: #fff;	
 $primary-blue: #3399cc;
-$primary-pink: #ff0066;
+$primary-red: #ff0066;
 $primary-green: #99cc33;
+$primary-green-hover: #7aa329;
 
 	/* Fonts */	
 $paragraph-font-family: 'Roboto';
@@ -29,11 +30,41 @@ $float-left: left;
 $align-right: right;
 $align-left: left;
 
+/*******************
+  	 	BASE
+*********************/
+
+h1{
+	color: $primary-red;
+	font-family: 'Oswald';
+	/*font-size: 4.5rem;*/
+	font-weight: 700;
+}
+
+h3{
+	color: $primary-red;
+	font-family: 'Oswald';
+}
+
+p{
+	font-family: 'Roboto';
+	color: #000;
+}
+
+/* End BASE */
+
+/******************************************/
 
 /****************
 	Navigation
 ******************/
 
+/* Begin Top Nav */
+
+.nav-wrapper img{
+	width: 35%;
+	margin-bottom: 1.5rem;
+}
 .main-top-nav{
 	list-style: none;
 }
@@ -50,12 +81,24 @@ $align-left: left;
 	color: $primary-blue;
 }
 
+.main-top-nav a:hover,
+.main-top-nav a:active,
+.main-top-nav a:focus {
+	color: $primary-red;
+}
+
 .right-nav{
 	text-align: right;
 }
+	/* End of Top Nav */
 
+/******************************************/
+	
+	/*  Begin Main Nav */
 .main-nav-wrap{
 	background-color: $primary-blue;
+	padding-top: 1.2rem;
+	padding-bottom: 0.7rem;
 }
 
 .main-nav{
@@ -71,27 +114,329 @@ $align-left: left;
 	color: $primary-white;
 }
 
+.main-nav a:active, 
+.main-nav a:focus,
+.main-nav a:hover{
+	color: $primary-red;
+}
+
 .soc-icons{
 	text-align: right;
 }
 .soc-icons i{
 	color: $primary-white;
+	font-size: 1.3rem;
+	padding-left: 0.7rem;
+	padding-top: 0.4rem;
+}
+
+.nav-inp-right{
+	position: relative;
+	height: 2.5rem;
+	border: 1px solid #fff;
 }
 
 .newsletterInput{
-	width: 66%;
+	width: 75%;
+	float: left;
+	background: transparent;
+	border: none;
+	color: #fff;
+}
+
+.nav-inp-right > input:focus{
+	border: none;
+	background-color: transparent;
+	outline: none;
+	box-shadow: none;
+	transition: none;
+}
+
+.nav-inp-right input:focus::-webkit-input-placeholder {
+    opacity: 0; /* this set placeholder to invisible when input receives click*/
 }
 
 .newsletter-btn{
+	position: absolute;
+	right: -1px;
+	top: -2px;
 	background-color: $primary-green;
+	color: #fff;
 	border: none;
 	display: inline-block;
-	float: right;
+	padding:0.73rem;
+}
+
+/* End of Main Nav */
+/**************************************************/
+
+/* Begin Hero Section */
+
+.hero-img{
+	background-image: url('../img/home/hero.jpg');
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*height: 35rem;*/
+}
+.hero-hd{
+	
+	margin-top: 2.5rem;
+	font-size: 2.1rem;
+	text-align: center;
+}
+
+.inp-col{
+	/*display: block;*/
+	text-align: center;
+	margin: 0 auto;
+	width: 13rem;
+}
+
+.inp-col-p{
+	/*display: block;*/
+	color: #fff;
+	text-align: center;
+	margin-top: 1rem;
+	font-size: 0.8rem;
+}
+
+/* End of Hero Section */
+/*******************************************************************/
+
+/* Begin Section Content */
+.content-wrap{
+	padding-top: 2rem;
+}
+
+.icons-img{
+	margin-left: 11rem;
 }
 
 
+/* End of Hero Section */
+/*******************************************************************/
+
+/*********************
+	MEDIA QUERY
+*************************/
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+	/************
+		BASE
+	*************/
+
+	p{
+		font-size: 1rem;
+	}
+
+	/***********
+		Nav-bar
+	***********/
+	.nav-wrapper img{
+		width: 58%;
+		margin-bottom: 0.8rem;
+	}
+	.nav-wrapper{
+		padding-top: 2rem;
+
+	} 
+	.main-top-nav{
+		padding-top: 1rem;
+		margin-bottom: 0;
+	}
+	.main-top-nav a, .main-nav a{
+		font-size: 1rem; /* 16px */
+	}
+	
+	/***************
+		HERO
+	****************/
+	h3{
+		font-size: 1.5rem;
+	}
+
+	/***************	
+		CONTENT
+	*****************/
+	.about-us{
+		float: left;
+	}
+
+	.icons-img{
+		position: relative;
+		top: -26rem;
+		left: 0;
+		margin-left:0;
+		opacity: 0.2;
+		width: 100%;
+		z-index: -10;
+	}
+
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+	/************
+		BASE
+	*************/
+
+	p{
+		font-size: 1.125rem;
+	}
+
+	/***********
+		Nav-bar
+	***********/
+	.nav-wrapper img{
+		width: 45%;
+		margin-bottom: 1rem;
+	}
+
+	.nav-wrapper{
+		padding-top: 2rem;
+	} 
+
+	.main-top-nav{
+		padding-top: 1.75rem;
+		margin-bottom: 0;
+	}
+
+	.main-top-nav a, .main-nav a{
+		font-size: 1rem; /* 16px */
+	}
+
+	.soc-icons i{
+		font-size: 1.3rem;
+		
+	}
+	.newsletterInput{
+		width: 50%;
+	}
+
+	/**********
+		HERO
+	***********/
+	.hero-hd{
+		font-size: 2.5rem;
+	}
+
+	.inp-col{
+		width: 15rem;
+	}
+
+	h3{
+		font-size: 1.5rem;
+	}
+
+	.icons-img{
+		margin-left: 1.7rem;
+	}
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	/************
+		BASE
+	*************/
+
+	p{
+		font-size: 1.125rem;
+
+	}
+
+	/***********
+		Nav-bar
+	***********/
+	.nav-wrapper{
+		padding-top: 3rem;
+	}
+
+	.main-top-nav{
+		padding-top: 1.5rem;
+		margin-bottom: 0;
+	}
+
+	.main-top-nav a, .main-nav a{
+		font-size: 1.2rem; /* 24px */
+	}
+
+	/**********
+		HERO
+	***********/
+	.hero-hd{
+		font-size: 4rem;
+		padding-right: 7rem;
+		padding-left: 2rem;
+		text-align: left;
+	}
+
+	.inp-col{
+		text-align: left;
+		width: 29rem;
+		padding-top: 4rem;
+		padding-left: 10%;
+		margin-right: 2rem;
+	}
+
+	.inp-col-p{
+		text-align: right;
+		padding-right: 1.5rem;
+	}
+
+	h3{
+		font-size: 1.875rem;
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+	
+}
 
 
+/***************** 
+Additional Classes
+*****************/
+
+.no-padding{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+/**********************
+	BUTTON AND ADDONS
+*************************/
+
+.main-btn{
+	background-color: $primary-green;
+	border: none;
+	color: #fff;
+	padding: 0.7rem;
+	width: 7rem;
+	display: inline-block;
+}
+
+a > .main-btn{
+	display: inline-block;
+}
+
+a:hover > .main-btn{
+	background-color: $primary-green-hover;
+}
+
+a:active > .main-btn{
+	border: none;
+	background-color: $primary-green-hover;
+}
 
 
 
