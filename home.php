@@ -1,46 +1,5 @@
 <?php include 'header.php' ?>
-    <!-- Navigation Starts Here -->
-  	<div class="nav-wrapper">
-    		<div class="row">
-    			<div class="large-6 medium-6 small-6 columns">
-    				<img src="img/home/logo.png" alt="Logo Image">
-    			</div>
-    			<div class="large-6 medium-6 small-6 right-nav columns">
-    				<ul class="main-top-nav">
-    					<li><a href="#">SIGNIN</a></li>
-    					<li><a href="#">SIGNUP</a></li>
-    				</ul>
-    			</div>
-    		</div>
-      <div class="main-nav-wrap">
-    		<div class="row">
-    			<div class="large-5 medium-5 small-12 columns no-padding">
-    				<ul class="main-nav">
-    					<li><a href="#">HOME</a></li>
-    					<li><a href="#">PARTIES</a></li>
-    					<li><a href="#">MAP</a></li>
-    					<li><a href="#">COMPARE</a></li>
-    				</ul>
-    			</div>
-    			<div class="large-3 medium-3 hide-for-small-only columns">
-    				<div class="soc-icons">
-    					<i class="fa fa-twitter"></i>
-    					<i class="fa fa-facebook"></i>
-    					<i class="fa fa-linkedin"></i>
-    					<i class="fa fa-instagram"></i>	
-    				</div>	
-    			</div>
-    			<div class="large-4 medium-4 hide-for-small-only columns">
-            <div class="nav-inp-right">
-      				<input type="text" class="newsletterInput" placeholder="Newsletter subscription">
-      				<a href="#" ><input type="submit" value="SIGN UP" class="newsletter-btn"></a>
-            </div>
-    			</div>	
-    			
-    		</div>
-      </div>
-    </div>
-    <!-- End of Navigation  -->
+
     <!-- Start Hero Section  -->
     <section class="hero-wrap">
       <div class="row hero-img">
@@ -49,15 +8,37 @@
         </div>
         
         <div class="large-6 medium-12 small-12 columns">
-          <div class="inp-col">
-              <input type="text" name="Email">
-              <input type="password" name="Password">
-              <a href="#" ><input type="button" class="main-btn" value="SIGN IN"></a>
-              
-          </div>
-          <p class='inp-col-p'>
-                By creating an account I consent to Make your voteup’s Terms of Service.
-          </p>    
+            
+            <form  id="signup-form-home" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+
+                <!--   EMAIL ENTRY    -->
+                <input class="input-form" type="text" name="email" id="emailHome"  placeholder="Enter email" />
+                <!--   PHP validation error message    -->
+                <div class="help">
+                     <?php if(isset($emailFailure)){ echo $emailFailure;}?>
+                </div>
+                <!--   Javascript validation error message    -->
+                <div class="help" id="emailHomeHelp">
+                    <p>&#42;Please fill in a real email address.</p>
+                </div>
+
+                <!--   PASSWORD ENTRY   -->
+
+                <input class="input-form" type="password" id="passwordHome" name="password" placeholder="Enter password"/>
+                 <!--   PHP validation error message    -->
+                <div class="help">
+                    <?php if(isset($passwordFailure)){ echo $passwordFailure;}?>
+                </div>
+                 <!--   Javascript validation error message    -->
+                <div class="help" id="passwordHomeHelp">
+                    <p>&#42; Password must be 6 or more characters one uppercase, one lowercase and one number</p>
+                </div>
+
+
+                <input class="main-btn" type="submit" name="submit" value="submit">
+
+            </form>
+            
         </div>
       </div>
     </section>
@@ -90,5 +71,6 @@
     <script src="bower_components/what-input/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/foundation.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
   </body>
   </html>	
