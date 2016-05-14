@@ -13,115 +13,115 @@
 	    <script src="js/script.js"></script>
 
 	    <style>
-		.row {
-		max-width: 75rem;
-		margin-left: auto;
-		margin-right: auto; }
-		.row::before, .row::after {
-		content: ' ';
-		display: table; }
-		.row::after {
-		clear: both; }
-		.column.row.row, .row.row.columns {
-		float: none; }
-		.row .column.row.row, .row .row.row.columns {
-		padding-left: 0;
-		padding-right: 0;
-		margin-left: 0;
-		margin-right: 0; }
-		label {
-			display: block;
+			.row {
+			max-width: 75rem;
+			margin-left: auto;
+			margin-right: auto; }
+			.row::before, .row::after {
+			content: ' ';
+			display: table; }
+			.row::after {
+			clear: both; }
+			.column.row.row, .row.row.columns {
+			float: none; }
+			.row .column.row.row, .row .row.row.columns {
+			padding-left: 0;
+			padding-right: 0;
+			margin-left: 0;
+			margin-right: 0; }
+			label {
+				display: block;
 
-		}
-.columns:last-child {
-      float: right; }
-.columns {
-      float: left; }
+					}
+			.columns:last-child {
+			      float: right; }
+			.columns {
+			      float: left; }
 
-@media screen and (min-width: 40em) {
-    .medium-1 {
-    width: 16.66667%; }
-
-
-  .medium-2 {
-    width: 33.33333%; }
+			@media screen and (min-width: 40em) {
+			    .medium-1 {
+			    width: 16.66667%; }
 
 
-  .medium-3 {
-    width: 50%; }
+			  .medium-2 {
+			    width: 33.33333%; }
 
 
-  .medium-4 {
-    width: 66.66667%; }
+			  .medium-3 {
+			    width: 50%; }
 
 
-  .medium-5 {
-    width: 83.33333%; }
+			  .medium-4 {
+			    width: 66.66667%; }
 
 
-  .medium-6 {
-    width: 100%; }
-
- 
-}
-
-@media screen and (min-width: 64em) {
-
-	.large-1 {
-    width: 8.33333%; }
+			  .medium-5 {
+			    width: 83.33333%; }
 
 
-  .large-2 {
-    width: 16.66667%; }
+			  .medium-6 {
+			    width: 100%; }
+
+			 
+			}
+
+			@media screen and (min-width: 64em) {
+
+				.large-1 {
+			    width: 8.33333%; }
 
 
-  .large-3 {
-    width: 25%; }
+			  .large-2 {
+			    width: 16.66667%; }
 
 
-  .large-4 {
-    width: 33.33333%; }
+			  .large-3 {
+			    width: 25%; }
 
 
-
-  .large-5 {
-    width: 41.66667%; }
+			  .large-4 {
+			    width: 33.33333%; }
 
 
 
-  .large-6 {
-    width: 50%; }
-
-
-  .large-7 {
-    width: 58.33333%; }
+			  .large-5 {
+			    width: 41.66667%; }
 
 
 
-  .large-8 {
-    width: 66.66667%; }
+			  .large-6 {
+			    width: 50%; }
 
 
-  .large-9 {
-    width: 75%; }
-
-
-  .large-10 {
-    width: 83.33333%; }
-
-  .large-11 {
-    width: 91.66667%; }
+			  .large-7 {
+			    width: 58.33333%; }
 
 
 
-  .large-12 {
-    width: 100%; }
-}
+			  .large-8 {
+			    width: 66.66667%; }
 
-.compare_content {
-	padding: 10px;
-	height: 40%;
-}
+
+			  .large-9 {
+			    width: 75%; }
+
+
+			  .large-10 {
+			    width: 83.33333%; }
+
+			  .large-11 {
+			    width: 91.66667%; }
+
+
+
+			  .large-12 {
+			    width: 100%; }
+			}
+
+			.compare_content {
+				padding: 10px;
+				height: 40%;
+			}
 	    </style>
 	</head>
 	<body ng-controller="mainController">
@@ -145,11 +145,13 @@
 			<br><br><br>
 
 			<h3>CATEGORIES</h3>
-			<label for="category{{categoryId}}" ng-repeat="(categoryId,categoryName) in compareCategory">
-				<input type="checkbox" id="category{{categoryId}}"  
-						ng-click="includeCategory($index)" checked="checked">
-					{{categoryName}}
-			</label>
+			<div ng-repeat="(categoryId,categoryName) in compareCategory">
+				<label for="{{categoryId}}">
+					<input type="checkbox" id="{{categoryId}}"  
+							ng-click="includeCategory(categoryName)">
+						{{categoryName}}
+				</label>
+			</div>
 
 			
 		</div>
@@ -162,10 +164,11 @@
 						<div class="compare_head">
 							<h4 class="party_name">{{ _content.partyName }}</h4>
 							<div class="count_vote">You agree with:<span class="total">{{_content.counter}}</span></div>
+							
 						</div>
-						<!-- div class="compare_content" ng-repeat="(_key, _category) in _content.category[0] " -->
-						<div class="compare_content" ng-repeat="(_key, _category) in _content.category[0] ">
-							<strong>{{_key }}</strong>:<br>{{_category}}<br>
+
+						<div class="compare_content" ng-repeat="(_key, _category) in _content.category | filter : categoryFilter">
+							{{_category.name}}<br>{{_category.content}}<br>
 							<button ng-click="countVote(_content)">Agree</button><br><br>
 						</div>
 					</div>
