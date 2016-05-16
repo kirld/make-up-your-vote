@@ -85,11 +85,13 @@ VoteApp.controller('mainController', function($scope) {
 
     $scope.comparePartyData = comparePartyData; // set the json data into scope
     $scope.compareCategory = compareCategory;
+    $scope.isLocked = false;
 
-    var x = 0; // variable for counter
     $scope.countVote = function(partyNum) { // the button was clicked
-        x++; // add 1
-        partyNum.counter++; //apply to the party
+
+            partyNum.counter++;
+            $scope.isLocked = true;
+
 
     };
 
@@ -103,7 +105,6 @@ VoteApp.controller('mainController', function($scope) {
         } else {
             $scope.categoryIncludes.splice($scope.categoryIncludes.indexOf(categoryName), 1);
         }
-
         
     };
     
@@ -112,6 +113,44 @@ VoteApp.controller('mainController', function($scope) {
         return $.inArray(targetCate, $scope.categoryIncludes) !== -1;
     };
 
+    $(window).resize(function(){
+        var w = $(window).width();
+        var x = 480;
+        if (w <= x) { // for mobile
+
+            
+            
+
+        } else { // for desktop, 
+
+            $scope.partyIncludes = []; // create an array to store checked data
+
+            $scope.includeParty = function(partyName) {
+                console.log(partyName);
+                if ($.inArray(partyName, $scope.partyIncludes) === -1) { 
+                    $scope.partyIncludes.push(partyName); // addes a party object inside the array
+
+                } else {
+                    $scope.partyIncludes.splice($scope.partyIncludes.indexOf(partyName), 1); // deletes a party object
+                }
+                
+            };
+
+            $scope.partyFilter = function(partyContent) {
+                var targetParty = partyContent.partyName;
+                //console.log(targetParty);
+
+                //return $.inArray(targetParty, $scope.partyIncludes) !== -1;
+                if($.inArray(targetParty, $scope.partyIncludes) !== -1){
+                    console.log($scope.partyIncludes.category);
+                }
+            };
+            
+            
+
+            
+        }
+    });
    
 
 

@@ -38,6 +38,25 @@
 			.columns {
 			      float: left; }
 
+			/* nghide */
+			.ng-hide-add {
+			  transition: 1s;
+			  opacity: 1;
+			}
+
+			.ng-hide-add-active {
+			  opacity: 0;
+			}
+
+			.ng-hide-remove {
+			  transition: 1s;
+			  opacity: 0;
+			}
+
+			.ng-hide-remove-active {
+			  opacity: 1;
+			}
+
 			@media screen and (min-width: 40em) {
 			    .medium-1 {
 			    width: 16.66667%; }
@@ -129,18 +148,15 @@
 			<h2>COMPARE</h2>
 			<h3>SELECT PARTIES TO COMPARE</h3>
 
-			<?php // if( mobile ) {  select box for mobiles ?>
-				<select ng-model="party" ng-options="p.partyName for p in comparePartyData">
-					<option value="">Select a Party</option>
-				</select>
-			<?php  // } else {checkbox for tablets and dekstops ?>
-				<label for="liberal"><input type="checkbox" id="liberal" value="1" checked="checked">Liberal Party of Canada<label>
-				<label for="conservative"><input type="checkbox" id="conservative" value="2" checked="checked">Conservative Party of Canada<label>
-				<label for="democratic"><input type="checkbox" id="democratic" value="3" checked="checked">New Democratic Party<label>
-				<label for="bloc"><input type="checkbox" id="bloc" value="4" checked="checked">Bloc Québécois<label>
-				<label for="green"><input type="checkbox" id="green" value="5" checked="checked">Green Party of Canada<label>
-				<label for="libertarian"><input type="checkbox" id="animal" value="6" checked="checked">Animal Alliance Environment Voters Party of Canada<label>
-			<?php //} ?>
+			<!-- for mobile -->
+			<select ng-model="party" ng-options="p.partyName for p in comparePartyData">
+				<option value="">Select a Party</option>
+			</select>
+			<!-- for desktop, tablet -->
+			<div ng-repeat="_content in comparePartyData">
+				<label for="{{ _content.shortName }}"><input type="checkbox" id="{{ _content.shortName }}" ng-click="includeParty(_content)">{{ _content.partyName }}<label>
+			</div>
+			
 
 			<br><br><br>
 
@@ -160,7 +176,8 @@
 			<h3>VOTES</h3>
 			<div class="">
 				<div class="row">
-					<div class="columns medium-3 large-2" ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true">
+					<div class="columns medium-3 large-2" ng-repeat="_content in comparePartyData | filter : partyFilter">
+					<!-- <div class="columns medium-3 large-2" ng-repeat="_content in comparePartyData | filter : {partyName: party.partyName}: true"> -->
 						<div class="compare_head">
 							<h4 class="party_name">{{ _content.partyName }}</h4>
 							<div class="count_vote">You agree with:<span class="total">{{_content.counter}}</span></div>
@@ -169,7 +186,8 @@
 
 						<div class="compare_content" ng-repeat="(_key, _category) in _content.category | filter : categoryFilter">
 							{{_category.name}}<br>{{_category.content}}<br>
-							<button ng-click="countVote(_content)">Agree</button><br><br>
+							<button id="btn_{{_category.name}}" ng-click="countVote(_content)">Agree</button><br><br>
+
 						</div>
 					</div>
 				</div>
