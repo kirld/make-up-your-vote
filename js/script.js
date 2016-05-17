@@ -8,7 +8,7 @@ comparePartyData = [
     "shortName":"Liberal",
 	"partyName":"Liberal Party Of Canada",
     "logo":"/img/logo/liberal.jpg",
-    "counter": 0,
+    "counter": [],
     "category": [
             {name: "Health", content: "Would invest in providing improved home care for seniors, work with the provinces to lower prescription drugs costs, and create a more flexible and accessible Employment Insurance Compassionate Care Benefit."},
             {name: "Taxes", content: "Would cancel corporate tax cuts and restore tax rate to 2010 level of 18 per cent, cap stock-option deductions and favours innovation and productivity tax credit."},
@@ -31,7 +31,7 @@ comparePartyData = [
     "shortName":"Conservative",
 	"partyName":"Conservative Party of Canada",
     "logo":"/img/logo/conservative.jpg",
-    "counter": 0,
+    "counter": [],
     "category": [
             {name: "Health", content: "Would increase annual health funding to the provinces to grow in line with nominal GDP, beginning in 2017-18."},
             {name: "Taxes", content: "Plan on doubling the child fitness tax credit to $1000 immediately, and pledge to create an adult fitness tax credit worth $500 once the federal budget is balanced."},
@@ -53,7 +53,7 @@ comparePartyData = [
     "shortName":"Democratic",
     "partyName":"New Democratic Party",
     "logo":"/img/logo/democratic.jpg",
-    "counter": 0,
+    "counter": [],
     "category": [
             {name: "Health", content: "Commit to six per cent escalator for health care funding, Pledges $165 million to hire more doctors and nurses, repatriate Canadian health care workers practising abroad and fix credentials for foreign doctors."},
             {name: "Taxes", content: "Would reduce tax rates for small business and provide $4,500 in tax credits per new hire. Would raise corporate taxes to 19.5 per cent to pay for this program."},
@@ -76,81 +76,103 @@ comparePartyData = [
 
 
 
-VoteApp.controller('mainController', function($scope) {
-
+VoteApp.controller('mainController', function($scope, $http) {
+    //// generate category array
     compareCategory=[]; // create an array
     $.each(comparePartyData[0].category, function( index, content ) {
         compareCategory.push(content.name); // generate the category name from the data
     });
 
-    $scope.comparePartyData = comparePartyData; // set the json data into scope
+
+    //// set data into scope
+    $scope.comparePartyData = comparePartyData; 
     $scope.compareCategory = compareCategory;
-    $scope.isLocked = false;
-
-    $scope.countVote = function(partyNum) { // the button was clicked
-
-            partyNum.counter++;
-            $scope.isLocked = true;
 
 
+    //// for checking the devices
+    $(window).on('load resize', function(){
+        var w = $(window).width();
+        var x = 480;
+        if (w <= x) { // for mobile
+            // for switching the element between devices
+            $("#comparePartySelectbox").css("display","block");
+            $("#comparePartyCheckbox").css("display","none");
+            isMobile = true;
+        } else { // for desktop, 
+            // for switching the element between devices
+            $("#comparePartySelectbox").css("display","none");
+            $("#comparePartyCheckbox").css("display","block");
+            isMobile = false;
+        }
+    });
+    
+
+    //// for counting votes
+    $scope.countVote = function(selectedPartyObject, selectedCategory) { // the button was clicked
+        if ($.inArray(selectedCategory,  selectedPartyObject.counter) === -1) { // if the agreed category was not in the counter array
+            selectedPartyObject.counter.push(selectedCategory); // add the category
+            $("#btn_"+selectedPartyObject.shortName+"_"+selectedCategory).addClass("voteAdded");
+        } else { // if it was in the array
+            selectedPartyObject.counter.splice(selectedPartyObject.counter.indexOf(selectedCategory), 1); // delete the category
+            $("#btn_"+selectedPartyObject.shortName+"_"+selectedCategory).removeClass("voteAdded");
+        }
     };
 
 
+    //// for filtering category select
     $scope.categoryIncludes = []; // create an array to store checked data
-
+    // for creating the array
     $scope.includeCategory = function(categoryName) {
-
-        if ($.inArray(categoryName, $scope.categoryIncludes) === -1) { // if it
+        if ($.inArray(categoryName, $scope.categoryIncludes) === -1) { // if it is not in array
             $scope.categoryIncludes.push(categoryName);
         } else {
             $scope.categoryIncludes.splice($scope.categoryIncludes.indexOf(categoryName), 1);
         }
-        
     };
-    
+    // for filter. checks whats inside the array
     $scope.categoryFilter = function(categoryContent) {
         var targetCate = categoryContent.name;
         return $.inArray(targetCate, $scope.categoryIncludes) !== -1;
     };
 
-    $(window).resize(function(){
-        var w = $(window).width();
-        var x = 480;
-        if (w <= x) { // for mobile
 
-            
-            
-
-        } else { // for desktop, 
-
-            $scope.partyIncludes = []; // create an array to store checked data
-
-            $scope.includeParty = function(partyName) {
-                console.log(partyName);
-                if ($.inArray(partyName, $scope.partyIncludes) === -1) { 
-                    $scope.partyIncludes.push(partyName); // addes a party object inside the array
-
-                } else {
-                    $scope.partyIncludes.splice($scope.partyIncludes.indexOf(partyName), 1); // deletes a party object
-                }
-                
-            };
-
-            $scope.partyFilter = function(partyContent) {
-                var targetParty = partyContent.partyName;
-                //console.log(targetParty);
-
-                //return $.inArray(targetParty, $scope.partyIncludes) !== -1;
-                if($.inArray(targetParty, $scope.partyIncludes) !== -1){
-                    console.log($scope.partyIncludes.category);
-                }
-            };
-            
-            
-
-            
+    //// for filtering party
+    $scope.partyIncludes = [];
+    // for creating the array
+    $scope.includeParty = function(partyName) {
+        if(isMobile == true){ // if it was from mobile selectbox
+            if (typeof this.party === 'undefined' || this.party === '' || this.party === null) return; // if the party was not selected return
+            var targetParty = this.party.shortName;
+            $scope.partyIncludes = [targetParty];
+        } else { // if it was from desktop/tablet checkbox
+            if ($.inArray(partyName, $scope.partyIncludes) === -1) { 
+                $scope.partyIncludes.push(partyName); // addes a party object inside the array
+            } else {
+                $scope.partyIncludes.splice($scope.partyIncludes.indexOf(partyName), 1); // deletes a party object
+            }
         }
-    });
+    };
+    // checks inside the array
+    $scope.partyFilter = function(partyContent) {
+       var targetParty = partyContent.shortName;
+        return $.inArray(targetParty, $scope.partyIncludes) !== -1;
+    };
+
+
+    //// for sending data
+    $scope.postCall = function(trans){
+        $http({ 
+            method : 'POST', 
+            url : '/compare.php', 
+            data: trans 
+            }).success(function(data, status, headers, config) { 
+            console.log('success!');
+            }).error(function(data, status, headers, config) { 
+            console.log('unsuccess!');
+        });
+    }
+
+    
    
 
 
