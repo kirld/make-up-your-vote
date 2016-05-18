@@ -8,10 +8,10 @@
     else {
         
         function prevent($this, $conn) {
-		stripslashes($this);
-		mysqli_real_escape_string($conn, $this);
-		return $this;
-	}
+        stripslashes($this);
+        mysqli_real_escape_string($conn, $this);
+        return $this;
+    }
         
         //if user hits the submit button
         if(isset($_POST['submit'])){
