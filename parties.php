@@ -41,6 +41,7 @@
     
 ?>
 <?php include 'header.php' ?>
+<?php include 'navigation.php' ?>
 
 <div class="parties-info-container row">
     
