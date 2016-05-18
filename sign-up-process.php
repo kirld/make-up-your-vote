@@ -65,6 +65,7 @@
                 //insert into database
                 $insertResult = mysqli_query($connection,$insert);
                 //begin session for user once sign up is complete
+                session_start();
                 $_SESSION['user'] = $email;
                 //Once user has succesfully created an account
                 // send to the compare page to begin voting

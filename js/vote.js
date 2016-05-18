@@ -73,6 +73,75 @@ comparePartyData = [
             {cd: "013", name: "ArtsAndCulture", content: "Would tighten foreign ownership rules to protect cultural industries, and pledge their support to cultural industries such as the CBC and Canada Council and museums."},
             {cd: "014", name: "Families", content: "Would expand Compassionate Care benefits, and wants inter-generational Home Retrofit program to help renovate homes when caring for aged relatives."}
     ]
+},
+{
+    "id": 4,
+    "shortName":"Bloc",
+    "partyName":"Bloc Québécois",
+    "logo":"/img/logo/bloc.jpg",
+    "counter": [],
+    "category": [
+            {cd: "001", name: "Health", content: "The Bloc Québécois would demand that Ottawa reinstate indexed healthcare transfers and Improve measures for caregivers."},
+            {cd: "002", name: "Taxes", content: "Pledge tax incentives for home energy retrofits, would eliminate tax havens, and institute a surtax of very high incomes and executive bonuses."},
+            {cd: "003", name: "Jobs/Economy", content: "Pledges support for older workers, want changes to EI for seasonal workers like fisherman, Would reform EI, and support pay equity for women."},
+            {cd: "004", name: "Democracy", content: "Pledge reform to Access to Information laws, would abolish the Senate, and treat Quebec City as a national capital."},
+            {cd: "005", name: "Education", content: "No official stance has been taken on this topic."},
+            {cd: "006", name: "Seniors", content: "Would increase allowance to widows and widowers, pledge improvements to the Guaranteed Income Supplement, including automatic registration of all eligible seniors."},
+            {cd: "007", name: "Environment", content: "Will run a carbon-neutral campaign by buying carbon offsets, would promote development of electric cars and support tax incentives for home energy retrofits."},
+            {cd: "008", name: "Crime", content: "Would give Quebec its own criminal code, and promises free permanent firearms registration, import controls that are on the books but not enforced, and the end of the amnesty."},
+            {cd: "009", name: "GovtSpending", content: "Supports reforming the financing of political parties, so that corporate donation limits would be lowered and contributions by the government would be raised."},
+            {cd: "010", name: "Immigration", content: "Would continue to defend Quebec's jurisdiction over settlement and integration of newcomers in the province."},
+            {cd: "011", name: "Consumers", content: "Would extend Quebec consumer protection laws for banks to the rest of Canada, and increase minimum monthly payments on credit cards to five per cent per month."},
+            {cd: "012", name: "ForeignPolicy", content: "Would increase foreign aid spending to 0.7 per cent of GDP, and opposes any aggressive unilateral action and is against conflicts that are preventable."},
+            {cd: "013", name: "ArtsAndCulture", content: "Would make Radio-Canada better represent Quebec, allow artists to spread out their income over a five-year period and abolish the GST on books."},
+            {cd: "014", name: "Families", content: "Improve measures for caregivers."}
+    ]
+},
+{
+    "id": 5,
+    "shortName":"Green",
+    "partyName":"Green Party of Canada",
+    "logo":"/img/logo/green.jpg",
+    "counter": [],
+    "category": [
+            {cd: "001", name: "Health", content: "Create a Canadian Disabilities Act and basic income program for the disabled, and create a national food plan that focuses on local grown, health choices."},
+            {cd: "002", name: "Taxes", content: "Want income splitting for common law, same sex families and single mothers with adult children, and legalize and tax marijuana."},
+            {cd: "003", name: "Jobs/Economy", content: "Youth employment plan, Want high speed rail corridors between Windsor, Ont. and Quebec and Edmonton to Calgary."},
+            {cd: "004", name: "Democracy", content: "Green Party MPs would bring respect and civility to Parliament: no heckling or schoolyard bully behaviour, and of course no attack ads in or out of an election."},
+            {cd: "005", name: "Education", content: "Would work to eliminate student debt nationally by moving to institute a grant system instead of the current loan system."},
+            {cd: "006", name: "Seniors", content: "Would establish a national pharmacare program to ensure Canadians have access to affordable medicine and further expand investment in health care to ensure that it remains universal."},
+            {cd: "007", name: "Environment", content: "Would immediately focus on leading world climate negotiations and developing 'concrete plans' to reduce Canada's carbon emissions."},
+            {cd: "008", name: "Crime", content: "Would legalize and tax marijuana."},
+            {cd: "009", name: "GovtSpending", content: "Would immediately work to reform the electoral system to establish a form of proportional representation. A Green government would also slash the budget of the Prime Minister's Office by 50%."},
+            {cd: "010", name: "Immigration", content: "Would eliminate the Temporary Foreign Workers Program and remove barriers to family reunification."},
+            {cd: "011", name: "Consumers", content: "Would create a national food plan that focuses on local grown, healthy choices."},
+            {cd: "012", name: "ForeignPolicy", content: "Would refocus Afghanistan mission to poverty alleviation, pledge to reduce military spending to 2005 levels."},
+            {cd: "013", name: "ArtsAndCulture", content: "Would guarantee $450 million in stable funding for the CBC / Radio Canada. $100M in 2011-2012, $150M in 2012-2013, $200M in 2013-2014."},
+            {cd: "014", name: "Families", content: "Would create a Canadian Disabilities Act and basic income program for the disabled, and invest an early childhood education."}
+    ]
+},
+{
+    "id": 6,
+    "shortName":"Libertarian",
+    "partyName":"Libertarian Party of Canada",
+    "logo":"/img/logo/libertarian.jpg",
+    "counter": [],
+    "category": [
+            {cd: "001", name: "Health", content: "Ensure that the federal government should leave the entirety of health care decisions to provincial andterritorial governments."},
+            {cd: "002", name: "Taxes", content: "Reduce federal income taxes to a maximum rate of 15% and increase the personal income tax exemption amount to $17,300 from $11,500."},
+            {cd: "003", name: "Jobs/Economy", content: "Would eliminate all tax credits and reduce federal income taxes to a maximum rate of 15%. They would increase the personal income tax exemption amount."},
+            {cd: "004", name: "Democracy", content: "No official stance has been taken on this topic."},
+            {cd: "005", name: "Education", content: "Would eliminate all tax credits, and replace them with 4 additional exemptions, valued at $4,000 each (Child, Senior, Disability, Student). The first $21,300 of students' income is tax-free federally."},
+            {cd: "006", name: "Seniors", content: "Would repeal the Canada Health Act in order to ensure that healthcare is exclusively a provincial responsibility"},
+            {cd: "007", name: "Environment", content: "Enforce property rights so individuals have full ownership over their land and the natural resources above and below it."},
+            {cd: "008", name: "Crime", content: "Would repeal Section 91 and 92 of the Criminal Code to make responsible gun possession legal."},
+            {cd: "009", name: "GovtSpending", content: "Would create an independent oversight board to ensure that privacy rights are not violated, and to ensure that government is as transparent as possible."},
+            {cd: "010", name: "Immigration", content: "Significantly decrease the bureaucratic burden for refugees and asylum seekers, Eliminate the point system for immigration and replace it with a background check for violent or fraudulent criminal activity"},
+            {cd: "011", name: "Consumers", content: "Would end the Candian Radio-Television Commission (CRTC) in order to give Canadians more choices between phone and cable TV plans, as well as Internet providers."},
+            {cd: "012", name: "ForeignPolicy", content: "Immediately withdraw Canadian armed forces from international conflicts. Reallocate military resources for the purpose of national defence, and Arctic sovereignty."},
+            {cd: "013", name: "ArtsAndCulture", content: "No official stance has been taken on this topic."},
+            {cd: "014", name: "Families", content: "They would allow private alternatives for care and insurance."}
+    ]
 }
 ]
 
@@ -175,10 +244,10 @@ VoteApp.controller('mainController', function($scope, $http) {
          $http({
                 method: 'post',
                 data: $scope.comparePartyData,
-                url: 'dataInsert.php',
+                url: 'data-insert.php',
             }).then(function(res){
                 console.log(res);
-                window.location="mypage.php";
+                window.location="profile.php";
                 
 
             }, function(res){
