@@ -134,6 +134,11 @@ p{
 	padding-top: 0.4rem;
 }
 
+.soc-icons a:hover > i {
+    color: $primary-red;
+}
+
+
 .nav-inp-right{
 	position: relative;
 	height: 2.5rem;
@@ -146,6 +151,7 @@ p{
 	background: transparent;
 	border: none;
 	color: #fff;
+    font-family: 'Oswald';
 }
 
 .nav-inp-right > input:focus{
@@ -168,8 +174,49 @@ p{
 	color: #fff;
 	border: none;
 	display: inline-block;
-	padding:0.73rem;
+	padding:0.69rem;
 }
+
+/* Placeholder for email and password*/
+.input-form::-webkit-input-placeholder{
+    color: #ccc;
+    font-family: 'Oswald';
+}
+.input-form::-moz-placeholder{
+    color: #ccc;
+    font-family: 'Oswald';
+}
+
+.input-form::-ms-input-placeholder{
+    color: #ccc;
+    font-family: 'Oswald';
+}
+.input-form::-moz-placeholder{
+    color: #ccc;
+    font-family: 'Oswald';
+}
+
+/*end  */
+
+/* Newsletter Input*/
+.newsletterInput::-webkit-input-placeholder{
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 1rem;
+}
+.newsletterInput::-moz-placeholder{
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 1rem;
+}
+
+.newsletterInput::-ms-input-placeholder{
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 1rem;
+}
+
+/* Mobile Nav Slider */
 
 /* End of Main Nav */
 /**************************************************/
@@ -208,6 +255,12 @@ p{
 /* End of Hero Section */
 /*******************************************************************/
 
+/* Begin About Section*/
+.about-wrap{
+    padding-top: 2rem;
+}
+/* End of About Section */
+
 /* Begin Section Content */
 .content-wrap{
 	padding-top: 2rem;
@@ -217,10 +270,134 @@ p{
 	margin-left: 11rem;
 }
 
+/* End of Section Content */
+/*******************************************************/
 
-/* End of Hero Section */
+/* Begin Parties Section*/
+.parties-wrap{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.parties-intro{
+    margin-bottom: 2rem;
+}
+.grey-box{
+    background-color: #ebebeb;
+    display: block;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.callout.par-box{
+    background-color: #ebebeb;
+    border: none;
+    padding: 1.3rem;
+    height: 14rem;
+}
+
+.callout.par-box h4{
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.parties-btn{
+    left: 1.3rem;
+    position: absolute;
+    bottom: 0.75rem;
+    background-color: $primary-green;
+    border: none;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 0.7rem;
+    width: 5rem;
+    display: inline-block;
+}
+/* End of Parties Section*/
 /*******************************************************************/
+/********************************************************************
+                           FOOTER
+********************************************************************/
 
+/* Start of Footer*/
+
+.footer-wrap{
+    background-color: $primary-blue;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    padding-top: 2rem;
+}
+
+.footer-hd{
+    color: #fff;
+    font-size: 1.7rem;
+}
+
+.footer-hd:nth-child(1),
+.footer-hd:nth-child(2){
+    border-bottom: 1.5px solid #fff;
+}
+
+.footer-soc i{
+    text-align: left;
+    color: $primary-white;
+    font-size: 1.4rem;
+    padding-right: 0.7rem;
+    padding-top: 0.4rem;
+}
+
+.footer-soc a:hover > i{
+    color: $primary-red;
+}
+
+.copy-rights{
+    color: #faf7f5;
+    font-family: 'Roboto';
+    font-size: 0.8rem;
+}
+
+.ft-input{
+    margin-top: 1rem;
+}
+
+.footer-ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-ul a{
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 1.3rem;
+}
+
+.footer-ul a:hover{
+    color: $primary-red;
+}
+
+.scrollTop i{
+    position: absolute;
+    /*top: 0.5rem;*/
+    color: #fff;
+    font-size: 1.5rem;
+    /*right: 22.5rem;*/
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.scrollTop p{
+    color: #fff;
+    position: absolute;
+    /*top: 3rem;*/
+    /*right: 20.75rem;*/
+}
+
+/* End of Footer*/
+/****************************************************************************/
 
 
 /********************************************************************
@@ -451,11 +628,203 @@ p{
 	MEDIA QUERY
 *************************/
 
+/*Main Content Arear Media Query Addition */
+/* Small additional for 
+Parties Section on Home Page */
+
+@media screen and (min-width: 26.375em) and (max-width: 31em) {
+    /* Parties Box, Img and Btn */
+    .callout.par-box{
+        height: 15rem;
+    }
+
+    .callout.par-box h4{
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .parties-btn{
+        width: 7rem;
+        font-size: 1rem;
+    }
+
+}
+@media screen and (min-width: 31.01em) and (max-width: 35.3em) {
+    /* Parties Box, Img and Btn */
+    .callout.par-box{
+        height: 18rem;
+    }
+
+    .callout.par-box h4{
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+    }
+
+    .parties-btn{
+        width: 7rem;
+        font-size: 1rem;
+    }
+
+}
+@media screen and (min-width: 35.35em) and (max-width: 39.75em) {
+    /* Parties Box, Img and Btn */
+    .callout.par-box{
+        height: 19.5rem;
+    }
+
+    .callout.par-box h4{
+        font-size: 1.18rem;
+        margin-bottom: 1rem;
+    }
+
+    .parties-btn{
+        width: 7rem;
+        font-size: 1rem;
+    }
+
+}
+@media screen and (min-width: 39.76em) and (max-width: 39.9375em) {
+    /* Parties Box, Img and Btn */
+    .callout.par-box{
+        height: 21.5rem;
+    }
+
+    .callout.par-box h4{
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .parties-btn{
+        width: 7rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 42.5em) and (max-width: 63.9375em){
+    /* Input Placeholder */
+    input[type="text"]::-webkit-input-placeholder{
+        font-size: 1rem;
+    }
+    /*input[type="text"].newsletterInput::-webkit-placeholder{
+        font-size: 3rem;
+    }*/ 
+}
+
+@media screen and (min-width: 64em){
+    .newsletter-btn{
+        top: -1px;
+    }
+
+    input[type="text"]::-webkit-input-placeholder{
+        font-size: 1.2rem;
+        /*text-transform: uppercase;*/
+    }
+}
+@media screen and (min-width: 39.9376em) and (max-width: 54em) {
+    /* Parties Box, Img and Btn */
+    .callout.par-box{
+        height: 22.5rem;
+    }
+
+    .callout.par-box h4{
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .parties-btn{
+        width: 7rem;
+        font-size: 1rem;
+    }
+
+}
+@media screen and (min-width: 54.1em) and (max-width: 60em) {
+    /* Parties Box, Img and Btn */
+    .callout.par-box{
+        height: 24.5rem;
+    }
+
+    .callout.par-box h4{
+        font-size: 1.4rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .parties-btn{
+        width: 7rem;
+        font-size: 1rem;
+    }
+
+}
+@media screen and (min-width: 60.1em) and (max-width: 65em) {
+    /* Parties Box, Img and Btn */
+    .callout.par-box{
+        height: 24.5rem;
+    }
+
+    .callout.par-box h4{
+        font-size: 1.4rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .parties-btn{
+        width: 7rem;
+        font-size: 1rem;
+    }
+
+}
+        /* Large screen  1040px*/
+@media screen and (min-width: 65.051em) {
+    /* Parties Box, Img and Btn */
+    .callout.par-box{
+        height: 24.5rem;
+    }
+
+    .callout.par-box h4{
+        font-size: 1.5rem;
+        margin-bottom: 1.8rem;
+    }
+    .child-2{
+        margin-bottom: 0rem !important;
+    }
+    .child-3{
+        margin-bottom: 2rem !important;
+    }
+
+    .parties-btn{
+        width: 7rem;
+        font-size: 1rem;
+    }
+
+    a:hover > .parties-btn{
+        background-color: $primary-green-hover;
+    }
+
+    a:active > .parties-btn{
+        border: none;
+        background-color: $primary-green-hover;
+    }
+
+}
+
+@media screen and (min-width: 69.56em){
+    .child-2{
+        margin-bottom: 2rem !important;
+    }
+
+}
+
+/********************************
+     MEDIA QUERY STARTS HERE 
+**********************************/
+
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
     /************
             BASE
     *************/
+    h3{
+        font-size: 1.3rem;
+    }
 
     p{
             font-size: 1rem;
@@ -465,43 +834,43 @@ p{
             Nav-bar
     ***********/
     .nav-wrapper img{
-            width: 58%;
-            margin-bottom: 0.8rem;
+        width: 58%;
+        margin-bottom: 0.8rem;
     }
     .nav-wrapper{
-            padding-top: 2rem;
+        padding-top: 2rem;
 
     } 
     .main-top-nav{
-            padding-top: 1rem;
-            margin-bottom: 0;
+        padding-top: 1rem;
+        margin-bottom: 0;
     }
     .main-top-nav a, .main-nav a{
-            font-size: 1rem; /* 16px */
+        font-size: 1rem; /* 16px */
     }
 
     /***************
             HERO
     ****************/
     h3{
-            font-size: 1.5rem;
+        font-size: 1.5rem;
     }
 
     /***************	
             CONTENT
     *****************/
     .about-us{
-            float: left;
+        float: left;
     }
 
     .icons-img{
-            position: relative;
-            top: -26rem;
-            left: 0;
-            margin-left:0;
-            opacity: 0.2;
-            width: 100%;
-            z-index: -10;
+        position: relative;
+        top: -26rem;
+        left: 0;
+        margin-left:0;
+        opacity: 0.2;
+        width: 100%;
+        z-index: -10;
     }
 
     /****************
@@ -532,12 +901,72 @@ p{
       bottom: 20px;
     }
 
+    .large-img-only{
+        display: none;
+    }
+    /***************    
+        Parties Section
+    *****************/
+    .page-wrap{
+        background-image: url('../img/home/iconsBg.jpg');
+        background-repeat: no-repeat;
+        background-position: 0rem 36rem;
+        background-size: inherit;
+        /*background-attachment: fixed;*/
+    }
+    /* Footer */
+
+    .scrollTop i{
+        top: 0.5rem;
+        font-size: 1.5rem;
+        right: 2.5rem;
+    }
+
+    .scrollTop p{
+        top: 3rem;
+        right: 1.2rem;
+    }
+
 }
 
 
 
 /* Medium and up */
-@media screen and (min-width: 40em) {}
+@media screen and (min-width: 40em) {
+
+     
+    .hero-img{
+        height: 19rem;
+    }
+
+    /* Footer */
+
+    .scrollTop i{
+        top: 0.5rem;
+        font-size: 1.5rem;
+        right: 2rem;
+    }
+
+    .scrollTop p{
+        top: 3rem;
+        right: .6rem;
+    }
+
+    .logo-white{
+        top: 4rem;
+        position: relative;
+    }
+
+    .footer-hd:nth-child(1),
+    .footer-hd:nth-child(2){
+        border: none;
+    }
+
+    .copy-rights{
+        display: block;
+        text-align: center;
+    }
+}
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
@@ -575,7 +1004,15 @@ p{
 
     }
     .newsletterInput{
-            width: 50%;
+            width: 100%;
+    }
+    input[type="text"]::-webkit-input-placeholder{
+        font-size: 0.75rem;
+        /*text-transform: uppercase;*/
+    }
+
+    .newsletter-btn{
+        top: -1px;
     }
 
     /**********
@@ -589,13 +1026,25 @@ p{
             width: 15rem;
     }
 
+    .hero-img{
+        height: 25rem;
+    }
+
     h3{
             font-size: 1.5rem;
     }
-
+    /*********************
+        About Section
+    **********************/
     .icons-img{
-            margin-left: 1.7rem;
+        margin-left: 3.5rem;
+        width: 76%;
     }
+
+    .large-img-only{
+        display: none;
+    }
+    
 
     /******************
            PARTIES
@@ -611,6 +1060,10 @@ p{
 
 /* Large and up */
 @media screen and (min-width: 64em) {
+    .large-img-only{
+        display: block;
+    }
+
 
     /************
             BASE
@@ -647,6 +1100,10 @@ p{
             text-align: left;
     }
 
+    .hero-img{
+        height: 36rem;
+    }
+
     .inp-col{
             text-align: left;
             width: 29rem;
@@ -661,14 +1118,63 @@ p{
     }
 
     h3{
-            font-size: 1.875rem;
+            font-size: 1.65rem;
     }
+
+    /*********************
+        About Section
+    **********************/
+    .icons-img{
+        margin-left: 3.5rem;
+        width: 76%;
+    }
+
+    .large-img-only{
+        display: block;
+    }
+
+    /* Footer */
+
+    .footer-soc i{
+        font-size: 1.5rem;
+    }
+    .scrollTop i{
+        /*position: absolute;*/
+        top: 0.5rem;
+        color: #fff;
+        font-size: 1.5rem;
+        right: 22.5rem;
+        /*border: 2px solid #fff;*/
+        /*border-radius: 50%;*/
+        /*padding: 0.5rem;*/
+        /*cursor: pointer;*/
+    }
+
+    .scrollTop p{
+        /*color: #fff;*/
+        /*position: absolute;*/
+        top: 3rem;
+        right: 20.75rem;
+    }
+
+    .footer-hd:nth-child(1),
+    .footer-hd:nth-child(2){
+        border: none;
+    }
+
+    .logo-white{
+        width: 70%;
+    }
+
+
 }
 
 /* Large only */
 @media screen and (min-width: 64em) and (max-width: 74.9375em) {
 
-	
+	.large-img-only{
+        display: block;
+    }
 }
 
 
