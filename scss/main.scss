@@ -30,6 +30,10 @@ $float-left: left;
 $align-right: right;
 $align-left: left;
 
+/* Spacing */
+
+$spacing: 30px;
+
 /*******************
   	 	BASE
 *********************/
@@ -217,182 +221,265 @@ p{
 /* End of Hero Section */
 /*******************************************************************/
 
+
+
+/********************************************************************
+                            PARTIES
+********************************************************************/
+
+
+.parties-sidebar {
+    ul{
+        margin-left: 0;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+}
+
+/*************************SIGN UP FORM *****************************/
+
+.form-container {
+  color: $primary-white;
+  margin-top: $spacing;
+  background-color: $primary-blue;
+  padding: $spacing;
+  
+  h3 {
+      color: $primary-white;
+  }
+}
+
+
+
+.form-labels {
+    color: $primary-white;
+    font-size: $paragraph-normal-size;
+}
+
+/*width of input field, allow icons to float next to it*/
+.input-form {
+   width: 90%;
+   float: left;
+}
+
+
+/*checkmark colored green*/
+.validated {
+   padding-left: 5px;	
+   color: $primary-white;
+}
+
+/*x colored red*/
+.invalid {
+    color: $primary-white;
+}
+
+.repeat-password {
+    float: left;
+}
+
+.validation-icon {
+    float: right;
+}
+#email #password {
+   width: 90%;
+   float: left;
+}
+
+/*hide help message on load of page*/
+#emailHelp, #passwordHelp, #emailHomeHelp, #passwordHomeHelp {
+    display: none;
+    color: $primary-white;
+    float: left;
+    width: 100%;
+}
+
+/************************* End of sign up form *****************************/
+
 /*********************
 	MEDIA QUERY
 *************************/
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
-	/************
-		BASE
-	*************/
+    /************
+            BASE
+    *************/
 
-	p{
-		font-size: 1rem;
-	}
+    p{
+            font-size: 1rem;
+    }
 
-	/***********
-		Nav-bar
-	***********/
-	.nav-wrapper img{
-		width: 58%;
-		margin-bottom: 0.8rem;
-	}
-	.nav-wrapper{
-		padding-top: 2rem;
+    /***********
+            Nav-bar
+    ***********/
+    .nav-wrapper img{
+            width: 58%;
+            margin-bottom: 0.8rem;
+    }
+    .nav-wrapper{
+            padding-top: 2rem;
 
-	} 
-	.main-top-nav{
-		padding-top: 1rem;
-		margin-bottom: 0;
-	}
-	.main-top-nav a, .main-nav a{
-		font-size: 1rem; /* 16px */
-	}
-	
-	/***************
-		HERO
-	****************/
-	h3{
-		font-size: 1.5rem;
-	}
+    } 
+    .main-top-nav{
+            padding-top: 1rem;
+            margin-bottom: 0;
+    }
+    .main-top-nav a, .main-nav a{
+            font-size: 1rem; /* 16px */
+    }
 
-	/***************	
-		CONTENT
-	*****************/
-	.about-us{
-		float: left;
-	}
+    /***************
+            HERO
+    ****************/
+    h3{
+            font-size: 1.5rem;
+    }
 
-	.icons-img{
-		position: relative;
-		top: -26rem;
-		left: 0;
-		margin-left:0;
-		opacity: 0.2;
-		width: 100%;
-		z-index: -10;
-	}
+    /***************	
+            CONTENT
+    *****************/
+    .about-us{
+            float: left;
+    }
+
+    .icons-img{
+            position: relative;
+            top: -26rem;
+            left: 0;
+            margin-left:0;
+            opacity: 0.2;
+            width: 100%;
+            z-index: -10;
+    }
 
 }
+
+
 
 /* Medium and up */
 @media screen and (min-width: 40em) {}
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-	/************
-		BASE
-	*************/
+    /************
+            BASE
+    *************/
 
-	p{
-		font-size: 1.125rem;
-	}
+    p{
+            font-size: 1.125rem;
+    }
 
-	/***********
-		Nav-bar
-	***********/
-	.nav-wrapper img{
-		width: 45%;
-		margin-bottom: 1rem;
-	}
+    /***********
+            Nav-bar
+    ***********/
+    .nav-wrapper img{
+            width: 45%;
+            margin-bottom: 1rem;
+    }
 
-	.nav-wrapper{
-		padding-top: 2rem;
-	} 
+    .nav-wrapper{
+            padding-top: 2rem;
+    } 
 
-	.main-top-nav{
-		padding-top: 1.75rem;
-		margin-bottom: 0;
-	}
+    .main-top-nav{
+            padding-top: 1.75rem;
+            margin-bottom: 0;
+    }
 
-	.main-top-nav a, .main-nav a{
-		font-size: 1rem; /* 16px */
-	}
+    .main-top-nav a, .main-nav a{
+            font-size: 1rem; /* 16px */
+    }
 
-	.soc-icons i{
-		font-size: 1.3rem;
-		
-	}
-	.newsletterInput{
-		width: 50%;
-	}
+    .soc-icons i{
+            font-size: 1.3rem;
 
-	/**********
-		HERO
-	***********/
-	.hero-hd{
-		font-size: 2.5rem;
-	}
+    }
+    .newsletterInput{
+            width: 50%;
+    }
 
-	.inp-col{
-		width: 15rem;
-	}
+    /**********
+            HERO
+    ***********/
+    .hero-hd{
+            font-size: 2.5rem;
+    }
 
-	h3{
-		font-size: 1.5rem;
-	}
+    .inp-col{
+            width: 15rem;
+    }
 
-	.icons-img{
-		margin-left: 1.7rem;
-	}
+    h3{
+            font-size: 1.5rem;
+    }
+
+    .icons-img{
+            margin-left: 1.7rem;
+    }
 
 }
 
 /* Large and up */
 @media screen and (min-width: 64em) {
 
-	/************
-		BASE
-	*************/
+    /************
+            BASE
+    *************/
 
-	p{
-		font-size: 1.125rem;
+    p{
+            font-size: 1.125rem;
 
-	}
+    }
 
-	/***********
-		Nav-bar
-	***********/
-	.nav-wrapper{
-		padding-top: 3rem;
-	}
+    /***********
+            Nav-bar
+    ***********/
+    .nav-wrapper{
+            padding-top: 3rem;
+    }
 
-	.main-top-nav{
-		padding-top: 1.5rem;
-		margin-bottom: 0;
-	}
+    .main-top-nav{
+            padding-top: 1.5rem;
+            margin-bottom: 0;
+    }
 
-	.main-top-nav a, .main-nav a{
-		font-size: 1.2rem; /* 24px */
-	}
+    .main-top-nav a, .main-nav a{
+            font-size: 1.2rem; /* 24px */
+    }
 
-	/**********
-		HERO
-	***********/
-	.hero-hd{
-		font-size: 4rem;
-		padding-right: 7rem;
-		padding-left: 2rem;
-		text-align: left;
-	}
+    /**********
+            HERO
+    ***********/
+    .hero-hd{
+            font-size: 4rem;
+            padding-right: 7rem;
+            padding-left: 2rem;
+            text-align: left;
+    }
 
-	.inp-col{
-		text-align: left;
-		width: 29rem;
-		padding-top: 4rem;
-		padding-left: 10%;
-		margin-right: 2rem;
-	}
+    .inp-col{
+            text-align: left;
+            width: 29rem;
+            padding-top: 4rem;
+            padding-left: 10%;
+            margin-right: 2rem;
+    }
 
-	.inp-col-p{
-		text-align: right;
-		padding-right: 1.5rem;
-	}
+    .inp-col-p{
+            text-align: right;
+            padding-right: 1.5rem;
+    }
 
-	h3{
-		font-size: 1.875rem;
-	}
+    h3{
+            font-size: 1.875rem;
+    }
 }
 
 /* Large only */
@@ -407,8 +494,8 @@ Additional Classes
 *****************/
 
 .no-padding{
-	padding-left: 0;
-	padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 
@@ -417,27 +504,26 @@ Additional Classes
 *************************/
 
 .main-btn{
-	background-color: $primary-green;
-	border: none;
-	color: #fff;
-	padding: 0.7rem;
-	width: 7rem;
-	display: inline-block;
+    background-color: $primary-green;
+    border: none;
+    color: #fff;
+    padding: 0.7rem;
+    width: 7rem;
+    display: inline-block;
 }
 
 a > .main-btn{
-	display: inline-block;
+    display: inline-block;
 }
 
 a:hover > .main-btn{
-	background-color: $primary-green-hover;
+    background-color: $primary-green-hover;
 }
 
 a:active > .main-btn{
-	border: none;
-	background-color: $primary-green-hover;
+    border: none;
+    background-color: $primary-green-hover;
 }
-
 
 
 

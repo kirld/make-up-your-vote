@@ -16,3 +16,45 @@
 
   </head>
   <body>
+    <!-- Navigation Starts Here -->
+  	<div class="nav-wrapper">
+    		<div class="row">
+    			<div class="large-6 medium-6 small-6 columns">
+    				<img src="img/home/logo.png" alt="Logo Image">
+    			</div>
+    			<div class="large-6 medium-6 small-6 right-nav columns">
+    				<ul class="main-top-nav">
+    					<li><a href="sign-in.php">SIGNIN</a></li>
+                                        <li><a href="sign-up.php">SIGNUP</a></li>
+    				</ul>
+    			</div>
+    		</div>
+      <div class="main-nav-wrap">
+    		<div class="row">
+    			<div class="large-5 medium-5 small-12 columns no-padding">
+    				<ul class="main-nav">
+    					<li><a href="home.php">HOME</a></li>
+    					<li><a href="parties.php?party=liberal">PARTIES</a></li>
+    					<li><a href="#">MAP</a></li>
+    					<li><a href="#">COMPARE</a></li>
+    				</ul>
+    			</div>
+    			<div class="large-3 medium-3 hide-for-small-only columns">
+    				<div class="soc-icons">
+    					<i class="fa fa-twitter"></i>
+    					<i class="fa fa-facebook"></i>
+    					<i class="fa fa-linkedin"></i>
+    					<i class="fa fa-instagram"></i>	
+    				</div>	
+    			</div>
+    			<div class="large-4 medium-4 hide-for-small-only columns">
+            <div class="nav-inp-right">
+      				<input type="text" class="newsletterInput" placeholder="Newsletter subscription">
+      				<a href="#" ><input type="submit" value="SIGN UP" class="newsletter-btn"></a>
+            </div>
+    			</div>	
+    			
+    		</div>
+      </div>
+    </div>
+    <!-- End of Navigation  -->
