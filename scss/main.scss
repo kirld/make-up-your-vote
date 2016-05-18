@@ -227,20 +227,170 @@ p{
                             PARTIES
 ********************************************************************/
 
+.parties-page-container {
+    margin-top: $spacing * 2;
+    
+    h2{
+        text-transform: uppercase;
+        font-size: 1.9em;
+    }
+    
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: $spacing * 1.5;
+        margin-left: 15px;
+    }
+    
+    a:hover {
+       color: $primary-white;
+    }
+}
 
 .parties-sidebar {
+    border-right: 4px solid #cccccc;
+    height: 450px;
+    
+   
     ul{
         margin-left: 0;
     }
     
     li {
         list-style: none;
+        margin-bottom: 18px;
     }
     
     a {
         text-decoration: none;
+        text-transform: uppercase;
+        color: $primary-blue;
+        font-family: 'Oswald';
+        font-size: 1.25rem;
+    }
+    
+    a:hover {
+        color: $primary-red;
     }
 }
+
+.parties-name-container {
+    background-color: $primary-blue;
+    margin-bottom: $spacing;
+    
+    h1{
+        color: $primary-white;
+        font-weight: 300;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+        font-size: 2.4em;
+    }
+   
+}
+
+
+.parties-info-container {
+    margin-bottom: $spacing;
+    
+    .main-btn {
+        text-transform: uppercase;
+        font-size: 0.9em;
+        width: 100%;
+        text-align: center;
+    }
+    
+   
+}
+
+.parties-img-container {
+    height: 200px;
+    
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.parties-page-info {
+    padding-left: 40px;
+}
+
+.back-to-top-container {
+    margin: $spacing * 2 0;
+    
+    .main-btn {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/**********BACK TO TOP BUTTON **************/
+.cd-top {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: $primary-green url(../img/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+/**********END OF BACK TO TOP BUTTON **************/
+
+
+/********** PROGRESS BARS **************/
+.progress {
+  width: 100%;
+  height: 3px;
+  background-color: #efefef;
+}
+
+#leader {
+    background-color: $primary-green;
+    height: 3px;
+    width: 33.3333%;
+}
+
+#history {
+    background-color: $primary-green;
+    height: 3px;
+    width: 33.3333% * 2;
+}
+
+#position {
+    background-color: $primary-green;
+    height: 3px;
+    width: 100%;
+}
+/********** END OFPROGRESS BARS **************/
+
 
 /*************************SIGN UP FORM *****************************/
 
@@ -271,7 +421,7 @@ p{
 
 /*checkmark colored green*/
 .validated {
-   padding-left: 5px;	
+   padding-left: 5px;   
    color: $primary-white;
 }
 
@@ -300,8 +450,11 @@ p{
     width: 100%;
 }
 
-/************************* End of sign up form *****************************/
+.validation-icon {
+    color: #000000;
+}
 
+/************************* End of sign up form *****************************/
 /*********************
 	MEDIA QUERY
 *************************/
@@ -357,6 +510,34 @@ p{
             opacity: 0.2;
             width: 100%;
             z-index: -10;
+    }
+
+    /****************
+          PARTIES
+    ****************/
+    .parties-name-container {
+        h1 {
+            font-size: 1.8em;
+            margin: 0;
+            padding: 10px;
+        }
+    }
+    
+    .parties-img-container {
+        margin-bottom: $spacing;
+    }
+    
+    .parties-page-info {
+                padding: 20px;
+    }
+    
+    .parties-info-container {
+        margin-bottom: 0;
+    }
+    
+    .cd-top {
+      right: 20px;
+      bottom: 20px;
     }
 
 }
@@ -422,6 +603,16 @@ p{
 
     .icons-img{
             margin-left: 1.7rem;
+    }
+
+    /******************
+           PARTIES
+    ******************/
+    .cd-top {
+        height: 40px;
+        width: 40px;
+        right: 30px;
+        bottom: 30px;
     }
 
 }
