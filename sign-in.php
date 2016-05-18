@@ -26,6 +26,7 @@
                     
                     if($password === $securePassword){
                         //start session
+                        session_start();
                         $_SESSION['user'] = $email;
                         //send to profile
                         header("Location: profile.php");

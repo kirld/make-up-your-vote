@@ -1,7 +1,15 @@
-<!DOCTYPE html>
-<html ng-app="VoteApp">
-	<head>
-		<meta charset="UTF-8">
+<?php
+  // Start the session
+  session_start();
+
+  //Delete all session variables if user logs out
+  if(isset($_POST['logOut']) OR !isset($_SESSION['user'])) {
+    session_unset(); 
+    session_destroy();
+  }
+?>
+<?php include 'header.php' ?>
+
 		<!-- load angularJS -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 	    <!--load angular route  -->
@@ -10,7 +18,7 @@
 	    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
 	    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 	    <!-- modules and controllers-->
-	    <script src="js/script.js"></script>
+	    <script src="js/vote.js"></script>
 
 	    <style>
 			.row {
@@ -40,6 +48,36 @@
 
 			.voteAdded {
 				background-color: green;
+			}
+
+			.compare_head, .compare_content {
+			  	transition: all linear 1.5s;
+			}
+
+			.ng-hide { font-size:0; }
+			.ng-enter, 
+			.ng-leave { 
+				  -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+				  -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+				  -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+				  -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+				  transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+				  position: relative;
+				  display: block;
+			} 
+			 
+			.ng-enter.ng-enter-active, 
+			.ng-leave {
+				  opacity: 1;
+				  top: 0;
+				  height: 30px;
+			}
+			 
+			.ng-leave.ng-leave-active,
+			.ng-enter {
+				  opacity: 0;
+				  top: -50px;
+				  height: 0px;
 			}
 
 			@media screen and (min-width: 40em) {
@@ -127,8 +165,9 @@
 				height: 40%;
 			}
 	    </style>
-	</head>
-	<body ng-controller="mainController">
+	
+<div ng-app="VoteApp">
+	<div ng-controller="mainController">
 		<div class="row">
 			<h2>COMPARE</h2>
 			<h3>SELECT PARTIES TO COMPARE</h3>
@@ -158,21 +197,33 @@
 		<div class="row">
 			<h3>VOTES</h3>
 			<form>
-				<button ng-click='saveData();'>Send All Result</button>
+				<?php if(isset($_SESSION['user'])){ ?>
+					<button ng-click='saveData();'>Send All Result</button>
+				<?php } else { ?>
+					<a class="sign-up.php">Sign Up to Check Your Preference</a>
+				<?php }; ?>
 				<div class="row">
 					<div class="columns medium-3 large-2" ng-repeat="_content in comparePartyData | filter : partyFilter">
 						<div class="compare_head">
 							<h4 class="party_name">{{ _content.partyName }}</h4>
-							<div class="count_vote">You agree with:<span type="text" readonly class="total" name="{{ _content.shortName }}_total">{{ _content.counter.length }}</span></div>
+							<?php if(isset($_SESSION['user'])){ ?>
+								<div class="count_vote">You agree with:<span type="text" readonly class="total" name="{{ _content.shortName }}_total">{{ _content.counter.length }}</span></div>
+							<?php }; ?>
 						</div>
 						<div class="compare_content" ng-repeat="(_key, _category) in _content.category | filter : categoryFilter">
 							{{_category.name}}<br>{{_category.content}}<br>
-							<button id="btn_{{_content.shortName}}_{{_category.cd}}" ng-click="countVote(_content, _category.cd)">Agree</button><br><br>
+							<?php if(isset($_SESSION['user'])){ ?>
+								<button id="btn_{{_content.shortName}}_{{_category.cd}}" ng-click="countVote(_content, _category.cd)">Agree</button><br><br>
+							<?php }; ?>
 						</div>
 					</div>
 				</div>
 			</form>
 		</div>
 
-	</body>
-</html>
+	</div>
+
+</div>
+
+</body>
+</html> 
