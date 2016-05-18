@@ -157,25 +157,22 @@
 
 		<div class="row">
 			<h3>VOTES</h3>
-			<button ng-click="postCall(false)">Send Result</button>
-			<div class="">
+			<form>
+				<button ng-click='saveData();'>Send All Result</button>
 				<div class="row">
 					<div class="columns medium-3 large-2" ng-repeat="_content in comparePartyData | filter : partyFilter">
 						<div class="compare_head">
 							<h4 class="party_name">{{ _content.partyName }}</h4>
-							<div class="count_vote">You agree with:<span class="total">{{ _content.counter.length }}</span></div>
+							<div class="count_vote">You agree with:<span type="text" readonly class="total" name="{{ _content.shortName }}_total">{{ _content.counter.length }}</span></div>
 						</div>
 						<div class="compare_content" ng-repeat="(_key, _category) in _content.category | filter : categoryFilter">
 							{{_category.name}}<br>{{_category.content}}<br>
-							<button id="btn_{{_content.shortName}}_{{_category.name}}" ng-click="countVote(_content, _category.name)">Agree</button><br><br>
+							<button id="btn_{{_content.shortName}}_{{_category.cd}}" ng-click="countVote(_content, _category.cd)">Agree</button><br><br>
 						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
-		<?php 
-			$request_body = file_get_contents('php://input');
-			$data = json_decode($request_body,true)
-		;?>
+
 	</body>
 </html>
