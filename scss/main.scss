@@ -227,30 +227,21 @@ p{
                             PARTIES
 ********************************************************************/
 
-.parties-page-container {
-    margin-top: $spacing * 2;
-    
-    h2{
-        text-transform: uppercase;
-        font-size: 1.9em;
-    }
-    
+/*Side bar parties title*/
+.parties-container-title {
+    margin: $spacing 0;
     h3 {
-        text-transform: uppercase;
-        margin-bottom: $spacing * 1.5;
-        margin-left: 15px;
-    }
-    
-    a:hover {
-       color: $primary-white;
+       margin-left: 12px;
+       text-transform: uppercase;
     }
 }
 
+/*Styling for the sidebar*/
 .parties-sidebar {
     border-right: 4px solid #cccccc;
     height: 450px;
     
-   
+    
     ul{
         margin-left: 0;
     }
@@ -273,6 +264,7 @@ p{
     }
 }
 
+/*Parties full name*/
 .parties-name-container {
     background-color: $primary-blue;
     margin-bottom: $spacing;
@@ -280,15 +272,14 @@ p{
     h1{
         color: $primary-white;
         font-weight: 300;
-        padding-left: 10px;
-        padding-bottom: 10px;
+        padding: 5px;
         text-transform: uppercase;
         font-size: 2.4em;
     }
    
 }
 
-
+/*Overall container that holds the parties information*/
 .parties-info-container {
     margin-bottom: $spacing;
     
@@ -301,7 +292,7 @@ p{
     
    
 }
-
+/*Parties info images, Contain to certain height*/
 .parties-img-container {
     height: 200px;
     
@@ -311,12 +302,13 @@ p{
     }
 }
 
+/*Padding to give space between sidebar and content*/
 .parties-page-info {
     padding-left: 40px;
 }
 
 .back-to-top-container {
-    margin: $spacing * 2 0;
+    margin-top: $spacing * 2;
     
     .main-btn {
         text-align: center;
@@ -337,7 +329,7 @@ p{
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: $primary-green url(../img/cd-top-arrow.svg) no-repeat center 50%;
+  background: $primary-green url(../img/parties/cd-top-arrow.svg) no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
