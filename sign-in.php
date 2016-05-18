@@ -20,7 +20,7 @@
             //if user name and password is found in database
             if ($rows > 0) {
                 while ($row = mysqli_fetch_assoc($queryResult)) {
-		    $securePassword = $row["password"];
+        $securePassword = $row["password"];
                     
                     $password = $hashed = hash("sha256", $password);
                     
@@ -54,31 +54,29 @@
           
 <div class="row">    
 
-    <div class="form-container small-12 medium-push-3 medium-6 columns">
+    <div class="small-12 medium-push-3 medium-6 columns">
         
-        <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+        <div class="form-container">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-            <h3>Sign In</h3>
-            <label class="form-labels">Email</label>
-            <input type="text" name="email" id="email"  placeholder="Enter email" />
+                <h3>Sign In</h3>
+                <label class="form-labels">Email</label>
+                <input type="text" name="email" id="email"  placeholder="Enter email" />
 
 
-            <!--   PASSWORD ENTRY   -->
-            <label class="form-labels">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter password"/>
-        
-  
-            <input class="main-btn" type="submit" name="submit" value="submit">
-            <!--  PHP sign in error-->
-             <?php if(isset($signInMessage)) { echo $signInMessage; } ?>
-        </form>
-        
+                <!--   PASSWORD ENTRY   -->
+                <label class="form-labels">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password"/>
+
+
+                <input class="main-btn" type="submit" name="submit" value="submit">
+                <!--  PHP sign in error-->
+                 <?php if(isset($signInMessage)) { echo $signInMessage; } ?>
+            </form>
+        </div>
     </div>
     
 </div>
-
-    
-
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/what-input/what-input.js"></script>
@@ -86,4 +84,4 @@
 <script src="js/app.js"></script>
 <script src="js/main.js"></script>
 </body>
-</html>	
+</html> 
