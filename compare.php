@@ -21,30 +21,6 @@
 	    <script src="js/vote.js"></script>
 
 	    <style>
-			.row {
-			max-width: 75rem;
-			margin-left: auto;
-			margin-right: auto; }
-			.row::before, .row::after {
-			content: ' ';
-			display: table; }
-			.row::after {
-			clear: both; }
-			.column.row.row, .row.row.columns {
-			float: none; }
-			.row .column.row.row, .row .row.row.columns {
-			padding-left: 0;
-			padding-right: 0;
-			margin-left: 0;
-			margin-right: 0; }
-			label {
-				display: block;
-
-					}
-			.columns:last-child {
-			      float: right; }
-			.columns {
-			      float: left; }
 
 			.voteAdded {
 				background-color: green;
@@ -80,117 +56,96 @@
 				  height: 0px;
 			}
 
+			.compare_content {
+				padding: 10px;
+				height: 40%;
+			}
+			#comparePartySelectbox {
+				background-color: #ebebeb;
+				border: 0;
+				background-image: url('./img/util/poly.png');
+				background-size: 18px;
+				padding-left: 25px;
+				font-family: 'Oswald';
+				text-transform: uppercase;
+			}
+			.parties-secondary-title {
+				border-bottom: 4px solid #d7d7d7;
+				margin-bottom: 25px;
+			}
+			#comparePartyCheckbox {
+				margin-bottom: 40px;
+			}
+
+			input[type="checkbox"] {
+				
+				-webkit-transform: scale(1.5);
+			   	transform: scale(1.5);
+			   	margin-right: 1.2em;
+			}
+			input[type=checkbox]:after {
+			    content: "\2714";
+			    color: #fff;
+			    background-color: #d7d7d7;
+			    display: inline-block;
+			    width: 19px;
+			    height: 19px;
+			    visibility: visible;
+			    padding-left: 4px;
+			}
+
+			input[type=checkbox]:checked:after {
+			    content: "\2714";
+			    background-color: #99cc33;
+			    color: #000;
+			}
+			
 			@media screen and (min-width: 40em) {
-			    .medium-1 {
-			    width: 16.66667%; }
 
 
-			  .medium-2 {
-			    width: 33.33333%; }
-
-
-			  .medium-3 {
-			    width: 50%; }
-
-
-			  .medium-4 {
-			    width: 66.66667%; }
-
-
-			  .medium-5 {
-			    width: 83.33333%; }
-
-
-			  .medium-6 {
-			    width: 100%; }
-
+			    .parties-secondary-title {
+					border-bottom: 0;
+				}
 			 
 			}
 
 			@media screen and (min-width: 64em) {
 
-				.large-1 {
-			    width: 8.33333%; }
-
-
-			  .large-2 {
-			    width: 16.66667%; }
-
-
-			  .large-3 {
-			    width: 25%; }
-
-
-			  .large-4 {
-			    width: 33.33333%; }
-
-
-
-			  .large-5 {
-			    width: 41.66667%; }
-
-
-
-			  .large-6 {
-			    width: 50%; }
-
-
-			  .large-7 {
-			    width: 58.33333%; }
-
-
-
-			  .large-8 {
-			    width: 66.66667%; }
-
-
-			  .large-9 {
-			    width: 75%; }
-
-
-			  .large-10 {
-			    width: 83.33333%; }
-
-			  .large-11 {
-			    width: 91.66667%; }
-
-
-
-			  .large-12 {
-			    width: 100%; }
+				
 			}
 
-			.compare_content {
-				padding: 10px;
-				height: 40%;
-			}
+			
 	    </style>
 	
 <div ng-app="VoteApp">
 	<div ng-controller="mainController">
 		<div class="row">
-			<h2>COMPARE</h2>
-			<h3>SELECT PARTIES TO COMPARE</h3>
+			<div class="parties-container-title medium-12 large-12 columns">
+	             <h1>COMPARE</h1>
+	        </div>
 
+			<div class="parties-secondary-title medium-12 large-12 columns">
+				<h4>SELECT PARTIES TO COMPARE</h4>
+			</div>
 			<!-- for mobile -->
 			<select id="comparePartySelectbox" ng-model="party" ng-options="p.partyName for p in comparePartyData" ng-change="includeParty()">
 				<option value="">Select a Party</option>
 			</select>
-
 			<!-- for desktop, tablet -->
-			<div id="comparePartyCheckbox">
-				<div ng-repeat="_content in comparePartyData">
-					<label for="{{ _content.shortName }}"><input type="checkbox" id="{{ _content.shortName }}" ng-click="includeParty(_content.shortName)">{{ _content.partyName }}<label>
+			<div id="comparePartyCheckbox" class="row">
+				<div class="medium-6 large-6 columns" ng-repeat="_content in comparePartyData">
+					<label for="{{ _content.shortName }}"><span class="checkbox-bg"><input type="checkbox" id="{{ _content.shortName }}" ng-click="includeParty(_content.shortName)"></span>{{ _content.partyName }}<label>
 				</div>
 			</div>
 			
-			<br><br><br>
-
-			<h3>CATEGORIES</h3>
-			<div ng-repeat="(categoryId,categoryName) in compareCategory">
-				<label for="{{categoryId}}"><input type="checkbox" id="{{categoryId}}" ng-click="includeCategory(categoryName)">{{categoryName}}</label>
+			<div class="parties-secondary-title medium-12 large-12 columns">
+				<h4>CATEGORIES</h4>
 			</div>
-
+			<div class="row">
+				<div class="small-6 medium-6 large-6 columns" ng-repeat="(categoryId,categoryName) in compareCategory">
+					<label for="{{categoryId}}"><span class="checkbox-bg"><input type="checkbox" id="{{categoryId}}" ng-click="includeCategory(categoryName)"></span>{{categoryName}}</label>
+				</div>
+			</div>
 			
 		</div>
 
@@ -206,6 +161,7 @@
 					<div class="columns medium-3 large-2" ng-repeat="_content in comparePartyData | filter : partyFilter">
 						<div class="compare_head">
 							<h4 class="party_name">{{ _content.partyName }}</h4>
+							<img src="{{ _content.logo }}">
 							<?php if(isset($_SESSION['user'])){ ?>
 								<div class="count_vote">You agree with:<span type="text" readonly class="total" name="{{ _content.shortName }}_total">{{ _content.counter.length }}</span></div>
 							<?php }; ?>
