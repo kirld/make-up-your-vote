@@ -9,8 +9,10 @@
           <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
 
           <div class="nav-inp-right ft-input">
-            <input type="text" class="newsletterInput" placeholder="Newsletter subscription">
-            <a href="#" ><input type="submit" value="SIGN UP" class="newsletter-btn"></a>
+            <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="post">
+                <input type="email" name="email" class="newsletterInput" placeholder="Newsletter subscription">
+                <input type="submit" name="submit" value="SIGN UP" class="newsletter-btn">
+            </form>
           </div>
         </div>
     </div>
