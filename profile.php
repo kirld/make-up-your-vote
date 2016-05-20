@@ -8,36 +8,9 @@
   }
   //including header and dbconnection
 include 'header.php';
+include'navigation.php'; 
 include("partials/db-connection.php");
 ?>
-<style>
-.parties-name-container h2 {
-    color: #fff;
-    font-weight: 300;
-    padding: 5px;
-    text-transform: uppercase;
-    font-size: 1.875rem;
-    font-family: 'Oswald';
-}
-.parties-container-title h1 {
-	    margin-left: 12px;
-    text-transform: uppercase;
-    font-family: 'Oswald';
-    font-size: 1.875rem;
-        font-weight: normal;
-    font-style: normal;
-    margin-left: 0;
-}
-.vote-result {
-	margin-top: 50px;
-}
-
-.vote-result h3, 
-.random-fact h3 {
-	color: #000;
-
-}
-</style>
 <div class="row">
         <div class="parties-container-title medium-12 large-12 columns">
              <h1>Your Result</h1>

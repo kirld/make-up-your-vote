@@ -7,8 +7,10 @@
     session_unset(); 
     session_destroy();
   }
+ 
+include 'header.php';
+include'navigation.php'; 
 ?>
-<?php include 'header.php' ?>
 
 		<!-- load angularJS -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
@@ -20,102 +22,7 @@
 	    <!-- modules and controllers-->
 	    <script src="js/vote.js"></script>
 
-	    <style>
-
-			.voteAdded {
-				background-color: green;
-			}
-
-			.compare_head, .compare_content {
-			  	transition: all linear 1.5s;
-			}
-
-			.ng-hide { font-size:0; }
-			.ng-enter, 
-			.ng-leave { 
-				  -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-				  -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-				  -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-				  -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-				  transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-				  position: relative;
-				  display: block;
-			} 
-			 
-			.ng-enter.ng-enter-active, 
-			.ng-leave {
-				  opacity: 1;
-				  top: 0;
-				  height: 30px;
-			}
-			 
-			.ng-leave.ng-leave-active,
-			.ng-enter {
-				  opacity: 0;
-				  top: -50px;
-				  height: 0px;
-			}
-
-			.compare_content {
-				padding: 10px;
-				height: 40%;
-			}
-			#comparePartySelectbox {
-				background-color: #ebebeb;
-				border: 0;
-				background-image: url('./img/util/poly.png');
-				background-size: 18px;
-				padding-left: 25px;
-				font-family: 'Oswald';
-				text-transform: uppercase;
-			}
-			.parties-secondary-title {
-				border-bottom: 4px solid #d7d7d7;
-				margin-bottom: 25px;
-			}
-			#comparePartyCheckbox {
-				margin-bottom: 40px;
-			}
-
-			input[type="checkbox"] {
-				
-				-webkit-transform: scale(1.5);
-			   	transform: scale(1.5);
-			   	margin-right: 1.2em;
-			}
-			input[type=checkbox]:after {
-			    content: "\2714";
-			    color: #fff;
-			    background-color: #d7d7d7;
-			    display: inline-block;
-			    width: 19px;
-			    height: 19px;
-			    visibility: visible;
-			    padding-left: 4px;
-			}
-
-			input[type=checkbox]:checked:after {
-			    content: "\2714";
-			    background-color: #99cc33;
-			    color: #000;
-			}
-			
-			@media screen and (min-width: 40em) {
-
-
-			    .parties-secondary-title {
-					border-bottom: 0;
-				}
-			 
-			}
-
-			@media screen and (min-width: 64em) {
-
-				
-			}
-
-			
-	    </style>
+	    
 	
 <div ng-app="VoteApp">
 	<div ng-controller="mainController">
@@ -123,54 +30,69 @@
 			<div class="parties-container-title medium-12 large-12 columns">
 	             <h1>COMPARE</h1>
 	        </div>
-
-			<div class="parties-secondary-title medium-12 large-12 columns">
-				<h4>SELECT PARTIES TO COMPARE</h4>
+	   	    
+	   	    <div class="row">
+				<div class="parties-secondary-title medium-12 large-12 columns">
+					<h4>SELECT PARTIES TO COMPARE</h4>
+				</div>
 			</div>
+
+			<div class="row">
 			<!-- for mobile -->
-			<select id="comparePartySelectbox" ng-model="party" ng-options="p.partyName for p in comparePartyData" ng-change="includeParty()">
-				<option value="">Select a Party</option>
-			</select>
+				<select id="comparePartySelectbox" ng-model="party" ng-options="p.partyName for p in comparePartyData" ng-change="includeParty()">
+					<option value="">Select a Party</option>
+				</select>
+			</div>
 			<!-- for desktop, tablet -->
-			<div id="comparePartyCheckbox" class="row">
-				<div class="medium-6 large-6 columns" ng-repeat="_content in comparePartyData">
-					<label for="{{ _content.shortName }}"><span class="checkbox-bg"><input type="checkbox" id="{{ _content.shortName }}" ng-click="includeParty(_content.shortName)"></span>{{ _content.partyName }}<label>
+		
+			<div id="comparePartyCheckbox" class="checkbox-container row">
+				<div class="small-6 medium-6 large-6 columns" ng-repeat="_content in comparePartyData">
+					<label for="{{ _content.shortName }}"><span class="checkbox-bg"><input type="checkbox" id="{{ _content.shortName }}" ng-click="includeParty(_content.shortName)"></span>{{ _content.partyName }}</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="parties-secondary-title medium-12 large-12 columns">
+					<h4>CATEGORIES</h4>
 				</div>
 			</div>
 			
-			<div class="parties-secondary-title medium-12 large-12 columns">
-				<h4>CATEGORIES</h4>
-			</div>
-			<div class="row">
-				<div class="small-6 medium-6 large-6 columns" ng-repeat="(categoryId,categoryName) in compareCategory">
+			<div class="checkbox-container row">
+				<div class="small-6 medium-4 large-4 columns" ng-repeat="(categoryId,categoryName) in compareCategory">
 					<label for="{{categoryId}}"><span class="checkbox-bg"><input type="checkbox" id="{{categoryId}}" ng-click="includeCategory(categoryName)"></span>{{categoryName}}</label>
 				</div>
 			</div>
-			
 		</div>
 
-		<div class="row">
-			<h3>VOTES</h3>
+		<div class="row compare-party">
 			<form>
-				<?php if(isset($_SESSION['user'])){ ?>
-					<button ng-click='saveData();'>Send All Result</button>
-				<?php } else { ?>
-					<a class="sign-up.php">Sign Up to Check Your Preference</a>
-				<?php }; ?>
 				<div class="row">
-					<div class="columns medium-3 large-2" ng-repeat="_content in comparePartyData | filter : partyFilter">
+					<div class="parties-secondary-title medium-12 large-12 columns">
+						<h4 class="float-left">VOTES</h4>
+						<?php if(isset($_SESSION['user'])){ ?>
+							<button class="save-button float-right" ng-click='saveData();'>Send All Result</button>
+						<?php } else { ?>
+							<a class="sign-up.php float-right">Sign Up to Check Your Preference</a>
+						<?php }; ?>
+					</div>
+				</div>
+				<div class="row selected-parties-container">
+					<div class="selected-parties columns medium-2 large-2 float-left" ng-repeat="_content in comparePartyData | filter : partyFilter">
 						<div class="compare_head">
 							<h4 class="party_name">{{ _content.partyName }}</h4>
-							<img src="{{ _content.logo }}">
+							<div class="party_logo"><img src="{{ _content.logo }}"></div>
 							<?php if(isset($_SESSION['user'])){ ?>
-								<div class="count_vote">You agree with:<span type="text" readonly class="total" name="{{ _content.shortName }}_total">{{ _content.counter.length }}</span></div>
+								<p class="count_vote">You agree with:<span class="total float-right" name="{{ _content.shortName }}_total">{{ _content.counter.length }}</span></p>
 							<?php }; ?>
 						</div>
 						<div class="compare_content" ng-repeat="(_key, _category) in _content.category | filter : categoryFilter">
-							{{_category.name}}<br>{{_category.content}}<br>
-							<?php if(isset($_SESSION['user'])){ ?>
-								<button id="btn_{{_content.shortName}}_{{_category.cd}}" ng-click="countVote(_content, _category.cd)">Agree</button><br><br>
-							<?php }; ?>
+							<h5 class="category_title">{{_category.name}}</h5>
+							<div class="category_text">
+								<p>{{_category.content}}</p><br>
+								<?php if(isset($_SESSION['user'])){ ?>
+									<button class="button-agree" id="btn_{{_content.shortName}}_{{_category.cd}}" ng-click="countVote(_content, _category.cd)">Agree</button><br><br>
+								<?php }; ?>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -181,5 +103,5 @@
 
 </div>
 
-</body>
-</html> 
+<!-- Start of Footer -->
+<?php include 'footer.php';?>

@@ -1,0 +1,273 @@
+/**********************
+    Compare & Profile
+***********************/
+
+
+/* angular animate
+--------------------*/
+.ng-hide { font-size:0; }
+.ng-enter, 
+.ng-leave { 
+      -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      position: relative;
+      display: block;
+} 
+ 
+.ng-enter.ng-enter-active, 
+.ng-leave {
+      opacity: 1;
+      top: 0;
+      height: 30px;
+}
+ 
+.ng-leave.ng-leave-active,
+.ng-enter {
+      opacity: 0;
+      top: -50px;
+      height: 0px;
+}
+.compare_head,
+.compare_content {
+    transition: all linear 1.5s;
+}
+
+/* titles
+-----------------------------*/
+.parties-secondary-title {
+    border-bottom: 4px solid #d7d7d7;
+    margin-bottom: 25px;
+
+    h4 {
+        font-family: 'Oswald';
+        text-transform: uppercase;
+    }
+}
+
+
+/* select box and check box
+-----------------------------*/
+#comparePartySelectbox {
+    background-color: #ebebeb;
+    border: 0;
+    background-image: url('./img/util/poly.png');
+    background-size: 18px;
+    padding-left: 25px;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+}
+
+#comparePartyCheckbox {
+    margin-bottom: 40px;
+}
+
+input[type="checkbox"] {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    margin-right: 1.2em;
+
+    &:after {
+        content: "\2714";
+        color: #fff;
+        background-color: #d7d7d7;
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        visibility: visible;
+        padding-left: 4px;
+        cursor: pointer;
+    }
+
+    &:checked:after {
+        content: "\2714";
+        background-color: #99cc33;
+        color: #000;
+    }
+
+}
+
+.checkbox-container {
+    background-color: #ebebeb;
+    padding: 20px;
+
+    label {
+        margin-bottom: 10px;
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}
+
+  
+/* votes
+-------------------*/
+.compare-party {
+    margin: 40px auto 100px;
+}
+
+.compare_content {
+    padding: 10px;
+    height: 40%;
+}
+
+.count_vote {
+    margin-top: 10px;
+
+    .total {
+        color: #ff0066;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 19px;
+    }
+}            
+
+.category_title {
+    color: #ff0066;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 10px 10px 10px 0;
+    margin-bottom: 10px;
+}
+
+.category_text {
+    height: 250px;
+
+    .button-agree {
+        background-color: #d7d7d7;
+        color: #fff;
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        padding: 10px 20px;
+    }
+    .button-agree.voteAdded {
+        background-color: #9c3;
+    }
+}
+
+.party_name {
+    background-color: #3399cc;
+    color: #fff;
+    padding: 20px;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.save-button {
+    background-color: #9c3;
+    color: #fff;
+    border: none;
+    display: inline-block;
+    padding: 0.73rem;
+}
+
+
+@media screen and (min-width: 40em) {
+    .category_text {
+        height: 500px;
+    }
+
+    .parties-secondary-title {
+        border-bottom: 0;
+    }
+
+    .selected-parties {
+        border-right: 1px solid #d7d7d7;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    .selected-parties-container {
+        max-height: 600px;
+        overflow-y: auto;
+
+    }
+    .party_name {
+        height: 90px;
+    }
+
+    .party_logo {
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .compare-party {
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    .selected-parties-container.row {
+        width: 150rem;
+        max-width: 150rem;
+    }
+    .compare-party::-webkit-scrollbar,
+    .selected-parties-container::-webkit-scrollbar {
+        width: 15px;
+    }
+    .compare-party::-webkit-scrollbar-track,
+    .selected-parties-container::-webkit-scrollbar-track {
+        background-color: #d7d7d7;  
+    }
+    .compare-party::-webkit-scrollbar-thumb,
+    .selected-parties-container::-webkit-scrollbar-thumb {
+        background-color: #9c3; 
+    }
+ 
+}
+
+@media screen and (min-width: 64em) {
+    
+    .party_name {
+        height: 90px;
+    }
+
+    .party_logo {
+        height: 88px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .compare-party {
+        max-width: 75em;
+    }
+    .selected-parties-container.row {
+        width: 100%;
+    }
+}
+
+
+/* profile page
+-----------------------------*/
+.parties-name-container h2 {
+    color: #fff;
+    font-weight: 300;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    font-family: 'Oswald';
+}
+.parties-container-title h1 {
+        margin-left: 12px;
+    text-transform: uppercase;
+    font-family: 'Oswald';
+    font-size: 1.875rem;
+        font-weight: normal;
+    font-style: normal;
+    margin-left: 0;
+}
+.vote-result {
+    margin-top: 50px;
+}
+
+.vote-result h3, 
+.random-fact h3 {
+    color: #000;
+
+}
