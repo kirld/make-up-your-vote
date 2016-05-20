@@ -5,8 +5,17 @@
 		</div>
 		<div class="large-6 medium-6 small-6 right-nav columns">
 			<ul class="main-top-nav">
-				<li><a href="#">SIGNIN</a></li>
-				<li><a href="#">SIGNUP</a></li>
+				<?php
+                    //if user sesing is set
+                    if(isset($_SESSION['user'])){
+                         echo '<li><form action="' . htmlentities($_SERVER['PHP_SELF']) . '" method="post"><button name="logOut">LOGOUT</button></form></li>';          
+                         echo "<li name='logOut'><a href='profile.php'>MEMBERS</a></li>"; 
+                    }
+                    else{
+                        echo "<li><a href='sign-in.php'>SIGNIN</a></li>";
+                        echo "<li><a href='sign-up.php'>SIGNUP</a></li>";
+                    }
+                ?>
 			</ul>
 		</div>
 	</div>
