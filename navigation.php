@@ -24,7 +24,7 @@
 		<div class="large-5 medium-5 small-12 columns no-padding">
 		  <ul class="main-nav">
 			<li><a href="index.php">HOME</a></li>
-			<li><a href="parties.php">PARTIES</a></li>
+			<li><a href="parties.php?id=1">PARTIES</a></li>
 			<li><a href="map.php">MAP</a></li>
 			<li><a href="#">COMPARE</a></li>
 		  </ul>
