@@ -1,11 +1,4 @@
 <?php
-  // Start the session
-  session_start();
-  //Delete all session variables if user logs out
-  if(isset($_POST['logOut']) OR !isset($_SESSION['user'])) {
-    session_unset(); 
-    session_destroy();
-  }
   //including header and dbconnection
 include 'header.php';
 include'navigation.php'; 
