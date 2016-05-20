@@ -890,19 +890,13 @@ Parties Section on Home Page */
         z-index: -10;
     }
 
-     /****************
+    /****************
           PARTIES
     ****************/
-    .parties-name-container {
-        h1 {
-            font-size: 2.2rem;
-            margin: 0;
-            padding: 10px;
-        }
-        
-        h2 {
-           font-size: 1.4rem;
-        }
+    .parties-name-container h1 {
+        font-size: 1.7rem;
+        margin: 0;
+        padding: 10px;
     }
     
     .parties-img-container {
@@ -912,6 +906,9 @@ Parties Section on Home Page */
     
     .parties-page-info-container {
          padding: 20px;
+        h2 {
+           font-size: $h2-mob;
+        }
     }
         
     .cd-top {
@@ -1072,11 +1069,25 @@ Parties Section on Home Page */
     /******************
            PARTIES
     ******************/
-    .cd-top {
+     .cd-top {
         height: 40px;
         width: 40px;
         right: 30px;
         bottom: 30px;
+    }
+    
+    .parties-sidebar a {
+        font-size: 1rem;
+    }
+    
+    .parties-name-container h1 {
+        font-size: 2.2rem;
+    }
+    
+    .parties-page-info-container {
+        p {
+            font-size: 1rem;
+        }
     }
 
 }
