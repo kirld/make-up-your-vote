@@ -4,7 +4,7 @@ include 'header.php';
 include'navigation.php'; 
 include("partials/db-connection.php");
 ?>
-<div class="row">
+<div class="row map-wrap">
         <div class="parties-container-title medium-12 large-12 columns">
              <h1>Your Result</h1>
         </div>
