@@ -8,6 +8,7 @@
   }
   //including header and dbconnection
 include 'header.php';
+include'navigation.php'; 
 include("partials/db-connection.php");
 ?>
 <style>
