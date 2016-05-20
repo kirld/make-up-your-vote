@@ -85,10 +85,20 @@ p{
 	color: $primary-blue;
 }
 
+.main-top-nav button{
+    font-family: 'Oswald';
+    font-size:  1.20rem;
+    display: block;
+    color: $primary-blue;
+}
+
 .main-top-nav a:hover,
 .main-top-nav a:active,
-.main-top-nav a:focus {
-	color: $primary-red;
+.main-top-nav a:focus,
+.main-top-nav button:hover,
+.main-top-nav button:active,
+.main-top-nav button:focus {
+    color: $primary-red;
 }
 
 .right-nav{
@@ -1007,6 +1017,11 @@ Parties Section on Home Page */
             font-size: 1rem; /* 16px */
     }
 
+    .main-top-nav button {
+        font-size: 0.95rem;
+    }
+
+
     .soc-icons i{
             font-size: 1.3rem;
 
@@ -1094,8 +1109,8 @@ Parties Section on Home Page */
             margin-bottom: 0;
     }
 
-    .main-top-nav a, .main-nav a{
-            font-size: 1.2rem; /* 24px */
+    .main-top-nav a, .main-nav a, main-top-nav button{
+        font-size: 1.2rem; /* 24px */
     }
 
     /**********
