@@ -1,5 +1,5 @@
 <?php include 'header.php' ?>
-
+<?php include 'navigation.php' ?>  
 <div class="row">
     
     <div class="small-12 medium-push-3 medium-6 columns">

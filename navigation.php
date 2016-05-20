@@ -5,8 +5,17 @@
 		</div>
 		<div class="large-6 medium-6 small-6 right-nav columns">
 			<ul class="main-top-nav">
-				<li><a href="#">SIGNIN</a></li>
-				<li><a href="#">SIGNUP</a></li>
+				<?php
+                    //if user sesing is set
+                    if(isset($_SESSION['user'])){
+                         echo '<li><form action="' . htmlentities($_SERVER['PHP_SELF']) . '" method="post"><button name="logOut">LOGOUT</button></form></li>';          
+                         echo "<li name='logOut'><a href='profile.php'>MEMBERS</a></li>"; 
+                    }
+                    else{
+                        echo "<li><a href='sign-in.php'>SIGNIN</a></li>";
+                        echo "<li><a href='sign-up.php'>SIGNUP</a></li>";
+                    }
+                ?>
 			</ul>
 		</div>
 	</div>
@@ -30,8 +39,10 @@
 		</div>
 		<div class="large-4 medium-4 hide-for-small-only columns">
             <div class="nav-inp-right">
-				<input type="text" class="newsletterInput" placeholder="Newsletter subscription">
-				<a href="#" ><input type="submit" value="SIGN UP" class="newsletter-btn"></a>
+				<form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="post">
+                    <input type="email" name="email" class="newsletterInput" placeholder="Newsletter subscription">
+                    <input type="submit" name="submit" value="SIGN UP" class="newsletter-btn">
+                </form>
             </div>
 		</div>	
 	</div>

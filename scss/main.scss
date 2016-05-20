@@ -85,10 +85,20 @@ p{
 	color: $primary-blue;
 }
 
+.main-top-nav button{
+    font-family: 'Oswald';
+    font-size:  1.20rem;
+    display: block;
+    color: $primary-blue;
+}
+
 .main-top-nav a:hover,
 .main-top-nav a:active,
-.main-top-nav a:focus {
-	color: $primary-red;
+.main-top-nav a:focus,
+.main-top-nav button:hover,
+.main-top-nav button:active,
+.main-top-nav button:focus {
+    color: $primary-red;
 }
 
 .right-nav{
@@ -433,25 +443,39 @@ p{
 /****************************************************************************/
 
 
-/********************************************************************
-                            PARTIES
-********************************************************************/
 
-/*Side bar parties title*/
-.parties-container-title {
-    margin: $spacing 0;
-    h3 {
-       margin-left: 12px;
-       text-transform: uppercase;
+/****************************************************************************
+                            PARTIES
+****************************************************************************/
+
+
+.info {
+    margin-bottom: $spacing;
+}
+
+.parties-page {
+     margin-bottom: 5px;
+}
+
+.parties-info-container {
+    margin-top: $spacing;
+    
+    h2{
+        text-transform: uppercase;
+        font-size: 1.9em;
+    }
+    
+    a:hover {
+       color: $primary-white;
     }
 }
 
-/*Styling for the sidebar*/
+/*Sidebar styling*/
 .parties-sidebar {
     border-right: 4px solid #cccccc;
     height: 450px;
     
-    
+   
     ul{
         margin-left: 0;
     }
@@ -474,7 +498,7 @@ p{
     }
 }
 
-/*Parties full name*/
+/*Styling for the parties name at top of page*/
 .parties-name-container {
     background-color: $primary-blue;
     margin-bottom: $spacing;
@@ -482,14 +506,14 @@ p{
     h1{
         color: $primary-white;
         font-weight: 300;
-        padding: 5px;
+        padding: 7px;
         text-transform: uppercase;
         font-size: 2.4em;
     }
    
 }
 
-/*Overall container that holds the parties information*/
+/*Wraps all the content for parties info*/
 .parties-info-container {
     margin-bottom: $spacing;
     
@@ -502,72 +526,29 @@ p{
     
    
 }
-/*Parties info images, Contain to certain height*/
+
+/*sets height for all images on party page*/
 .parties-img-container {
-    height: 200px;
-    
-    img {
-        width: 100%;
-        height: 100%;
-    }
+    height: 250px;
 }
 
-/*Padding to give space between sidebar and content*/
-.parties-page-info {
+/*Wraps all the parties information*/
+.parties-page-info-container {
     padding-left: 40px;
 }
 
-.back-to-top-container {
-    margin-top: $spacing * 2;
-    
-    .main-btn {
-        text-align: center;
-        width: 100%;
-    }
-}
-
-/**********BACK TO TOP BUTTON **************/
+/*Back to top Button*/
 .cd-top {
+  margin-top: 10px;
+  float: right;
   display: inline-block;
   height: 30px;
   width: 30px;
-  position: fixed;
-  bottom: 40px;
-  right: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  /* image replacement properties */
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
   background: $primary-green url(../img/parties/cd-top-arrow.svg) no-repeat center 50%;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
-  -moz-transition: opacity .3s 0s, visibility 0s .3s;
-  transition: opacity .3s 0s, visibility 0s .3s;
 }
-.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
-  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
-  -moz-transition: opacity .3s 0s, visibility 0s 0s;
-  transition: opacity .3s 0s, visibility 0s 0s;
-}
-.cd-top.cd-is-visible {
-  /* the button becomes visible */
-  visibility: visible;
-  opacity: 1;
-}
-.cd-top.cd-fade-out {
-  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-  opacity: .5;
-}
-.no-touch .cd-top:hover {
-  background-color: #e86256;
-  opacity: 1;
-}
-/**********END OF BACK TO TOP BUTTON **************/
 
+/* PROGRESS BARS */
 
-/********** PROGRESS BARS **************/
 .progress {
   width: 100%;
   height: 3px;
@@ -591,11 +572,12 @@ p{
     height: 3px;
     width: 100%;
 }
-/********** END OFPROGRESS BARS **************/
+/* END OFPROGRESS BARS */
 
 
-/*************************SIGN UP FORM *****************************/
+/*SIGN UP FORM */
 
+/*Wraps the whole form*/
 .form-container {
   color: $primary-white;
   margin-top: $spacing;
@@ -606,8 +588,6 @@ p{
       color: $primary-white;
   }
 }
-
-
 
 .form-labels {
     color: $primary-white;
@@ -636,9 +616,15 @@ p{
     float: left;
 }
 
+/*Validation icons appear when user enters info into form*/
 .validation-icon {
     float: right;
 }
+
+.validation-icon {
+    color: #000000;
+}
+
 #email #password {
    width: 90%;
    float: left;
@@ -652,11 +638,9 @@ p{
     width: 100%;
 }
 
-.validation-icon {
-    color: #000000;
-}
 
-/************************* End of sign up form *****************************/
+
+/* End of sign up form */
 /*********************
 	MEDIA QUERY
 *************************/
@@ -909,26 +893,24 @@ Parties Section on Home Page */
     /****************
           PARTIES
     ****************/
-    .parties-name-container {
-        h1 {
-            font-size: 1.8em;
-            margin: 0;
-            padding: 10px;
-        }
+    .parties-name-container h1 {
+        font-size: 1.7rem;
+        margin: 0;
+        padding: 10px;
     }
     
     .parties-img-container {
-        margin-bottom: $spacing;
+        margin-bottom: $spacing/2;
+        height: 100%;
     }
     
-    .parties-page-info {
-                padding: 20px;
+    .parties-page-info-container {
+         padding: 20px;
+        h2 {
+           font-size: $h2-mob;
+        }
     }
-    
-    .parties-info-container {
-        margin-bottom: 0;
-    }
-    
+        
     .cd-top {
       right: 20px;
       bottom: 20px;
@@ -1032,6 +1014,11 @@ Parties Section on Home Page */
             font-size: 1rem; /* 16px */
     }
 
+    .main-top-nav button {
+        font-size: 0.95rem;
+    }
+
+
     .soc-icons i{
             font-size: 1.3rem;
 
@@ -1082,11 +1069,25 @@ Parties Section on Home Page */
     /******************
            PARTIES
     ******************/
-    .cd-top {
+     .cd-top {
         height: 40px;
         width: 40px;
         right: 30px;
         bottom: 30px;
+    }
+    
+    .parties-sidebar a {
+        font-size: 1rem;
+    }
+    
+    .parties-name-container h1 {
+        font-size: 2.2rem;
+    }
+    
+    .parties-page-info-container {
+        p {
+            font-size: 1rem;
+        }
     }
 
 }
@@ -1119,8 +1120,8 @@ Parties Section on Home Page */
             margin-bottom: 0;
     }
 
-    .main-top-nav a, .main-nav a{
-            font-size: 1.2rem; /* 24px */
+    .main-top-nav a, .main-nav a, main-top-nav button{
+        font-size: 1.2rem; /* 24px */
     }
 
     /**********
