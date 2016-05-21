@@ -11,7 +11,7 @@
         
         <div class="large-6 medium-12 small-12 columns">
           <div class="inp-col">
-          <form  id="signup-form-home" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+          <form  id="signup-form-home" action="sign-up-process.php" method="post">
                 <!-- EMAIL ENTRY  -->  
               <input class="input-form" type="text" name="email" id="emailHome"  placeholder="Enter email" />
              <!-- PHP validation error message    -->
