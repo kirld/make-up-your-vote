@@ -1,4 +1,24 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <!-- Oswald Goole Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <!-- Roboto Goole Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/app.css">
+      <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+<?php include 'navigation.php' ?> 
 <?php include("partials/db-connection.php") ?>
+<?php include 'newsletter.php' ?>
 <?php
    //if no connection to database is made, error will display
    if( !$connection ) {
@@ -25,11 +45,10 @@
                     $password = $hashed = hash("sha256", $password);
                     
                     if($password === $securePassword){
-                        //start session
                         session_start();
                         $_SESSION['user'] = $email;
                         //send to profile
-                        header("Location: profile.php");
+                        echo "<script> location.replace('profile.php'); </script>";
                     }
                     else {
                       $signInMessage = "<div>";
@@ -50,9 +69,7 @@
     
     
 ?>
-
-<?php include 'header.php' ?>
-<?php include 'navigation.php' ?>         
+        
 <div class="row">    
 
     <div class="small-12 medium-push-3 medium-6 columns">
@@ -78,11 +95,4 @@
     </div>
     
 </div>
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/what-input/what-input.js"></script>
-<script src="bower_components/foundation-sites/dist/foundation.js"></script>
-<script src="js/app.js"></script>
-<script src="js/main.js"></script>
-</body>
-</html> 
+<?php include 'footer.php' ?> 
