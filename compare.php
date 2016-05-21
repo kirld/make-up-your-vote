@@ -9,6 +9,7 @@
   }
 ?>
 <?php include 'header.php' ?>
+<?php $currentPage = "compare.php";?>
 
 		<!-- load angularJS -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
