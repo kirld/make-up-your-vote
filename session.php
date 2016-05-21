@@ -1,5 +1,4 @@
 <?php
-    session_start();
     //if user clicks log out
    if(isset($_POST['logOut'])){
         session_unset();
