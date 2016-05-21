@@ -64,12 +64,12 @@
                             VALUES ('$email','$hashed')";
                 //insert into database
                 $insertResult = mysqli_query($connection,$insert);
-                //begin session for user once sign up is complete
                 session_start();
+                //begin session for user once sign up is complete
                 $_SESSION['user'] = $email;
                 //Once user has succesfully created an account
                 // send to the compare page to begin voting
-                header("Location: compare.php");
+                echo "<script> location.replace('compare.php'); </script>";
             }
         }
     }
