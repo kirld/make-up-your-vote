@@ -37,19 +37,45 @@ include("partials/db-connection.php");
 			$agree[] = $row["agree"];
 		}
 	}
+    // showing the random fact
+    $randomVote = "SELECT facttable.fact, info.leader_img, party.name FROM fact_table as facttable, parties_info_table as info, party_table as party WHERE facttable.party_id = party.id AND facttable.party_id = info.id";
+    $resultRandomVote = mysqli_query($connection, $randomVote);
+    $numOfRowsRandom = mysqli_num_rows($resultRandomVote);
+    if($numOfRowsRandom>0){
+        while($random_row = mysqli_fetch_assoc($resultRandomVote)) {
+            
+            $random_fact[] = $random_row["fact"];
+            $random_leader_img[] = $random_row["leader_img"];
+            $random_party_name[] = $random_row["name"];
+        }
+    }
+
+    $randomShow = rand(0, $numOfRowsRandom-1);
 ?>
 <section class="random-fact row">
 	<div class="medium-12 large-12 columns">
 		<div class="parties-name-container">
-            <h2><?php echo $party_name[0] ?></h2>
+            <?php if($numOfRowsVote>0){ //if vote was done ?>
+                <h2><?php echo $party_name[0] ?></h2>
+            <?php } else { // if the vote was never done before ?>
+                <h2><?php echo $random_party_name[$randomShow] ?></h2>
+            <?php } ?>
         </div>
 		<div class="row">
 			<div class="medium-5 large-6 columns">
-				<img src="./img/parties/<?php echo $leader_img[0]?>" alt="<?php echo $party_name[0] ?>">
+                <?php if($numOfRowsVote>0){ //if vote was done ?>
+				    <img src="./img/parties/<?php echo $leader_img[0]?>" alt="<?php echo $party_name[0] ?>">
+                <?php } else { // if the vote was never done before ?>
+                    <img src="./img/parties/<?php echo $random_leader_img[$randomShow]?>" alt="<?php echo $random_party_name[$randomShow] ?>">
+                <?php } ?>
 			</div>
 			<div class="medium-7 large-6 columns">
 				<h3>INTERESTING FACT</h3>
-				<p><?php echo $fact[0] ?></p>
+                <?php if($numOfRowsVote>0){ //if vote was done ?>
+				    <p><?php echo $fact[0] ?></p>
+                <?php } else { // if the vote was never done before ?>
+                    <p><?php echo $random_fact[$randomShow] ?></p>
+                <?php } ?>
 			</div>
 		</div>
 	</div>	
@@ -60,7 +86,7 @@ include("partials/db-connection.php");
 		<?php if($numOfRowsVote>0){ //if vote was done ?>
 		<div id="container" style="width:100%; height:400px;"></div>
 		<?php } else { // if the vote was never done before ?>
-		<a href="compare.php">VOTE FOR PARTIES</a>
+		<a class="save-button"href="compare.php">VOTE FOR PARTIES</a>
 		<?php } ?>
 	</div>	
 </section>
