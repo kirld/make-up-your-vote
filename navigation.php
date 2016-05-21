@@ -40,8 +40,9 @@
 		<div class="large-4 medium-4 hide-for-small-only columns">
             <div class="nav-inp-right">
 				<form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="post">
-                    <input type="email" name="email" class="newsletterInput" placeholder="Newsletter subscription">
-                    <input type="submit" name="submit" value="SIGN UP" class="newsletter-btn">
+                    <input type="email" name="email" class="newsletterInput"  placeholder="Newsletter subscription" 
+                           value="<?php if(isset($successNewsletter)){ echo $successNewsletter;} ?> " required>
+                    <input type="submit" name="newsletterSubmit" value="SIGN UP" class="newsletter-btn">
                 </form>
             </div>
 		</div>	
