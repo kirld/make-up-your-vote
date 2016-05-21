@@ -47,5 +47,6 @@
   <script src="bower_components/foundation-sites/dist/foundation.js"></script>
   <script src="js/app.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ $(document).ready(function(){
 	var mobMenu = $('.mobile-menu');
 		mobMenu.hide(); // hidden on load
 		mobClick.click(function(){
-			event.preventDefault();
+			// event.preventDefault();
 			if(mobMenu.is(':hidden')){
 				mobMenu.slideDown(450,"swing");
 			}

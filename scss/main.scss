@@ -124,6 +124,10 @@ p{
 	color: $primary-red;
 }
 
+.active-page {
+    color: $primary-red;
+}
+
 .soc-icons{
 	text-align: right;
 }
@@ -216,6 +220,7 @@ p{
     font-size: 1rem;
 }
 
+
 /* Mobile Nav Slider */
 .map-wrap{
     padding-top: 2rem;
@@ -238,7 +243,8 @@ p{
 
 .mobile-menu ul{
     list-style: none;
-    margin-left: 0.6rem;
+    margin-left: -0.6rem;
+    padding: 1.5rem;
 }
 
 .mobile-menu a:hover{
@@ -349,6 +355,109 @@ p{
 }
 /* End of Parties Section*/
 /*******************************************************************/
+
+/* Map image section */
+
+.img-wrap{
+    width: 727px;
+    margin: 0 auto;
+}
+
+.mps-wrap{
+    margin: 0 auto;
+}
+.mps-box{ /* Background div of MPS*/
+    float:left;
+    /*outline: 1px solid red;*/
+    // margin-right: 10px;
+    padding: 10px;
+    text-align: center;
+
+}
+.mps-box ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.mps-img{
+    width: 100%;
+}
+
+.liberal{
+    background-color: red;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.liberal h3{
+    margin: 0;
+}
+.parties-legend{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 17rem;
+}
+
+.ndp{
+    background-color: orange;
+    display: inline-block;
+    padding: 1rem;
+
+}
+
+.quebec{
+    background-color: #4dd2ff;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.green{
+    background-color: #00b33c;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.conservative{
+    background-color: #0099ff;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.mps-name{ /* MPS names */
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 1.3rem;
+    background-color: #3399cc;
+    // width: 10rem;
+    padding: 0.7rem;
+    margin-bottom: 1.1rem;
+}
+
+.mps-party{
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.resultBox{
+    // width: 100%;
+    // height: auto;
+
+}
+
+.resultBox h3{
+    margin: 0;
+}
+
+.result-info{
+    margin-bottom: 10rem;
+}
+
+/* End of Map image section */
+/*End of Map*/
+/**********************************************************/
 /********************************************************************
                            FOOTER
 ********************************************************************/
@@ -731,6 +840,8 @@ Parties Section on Home Page */
         width: 7rem;
         font-size: 1rem;
     }
+
+    
 }
 
 @media screen and (min-width: 42.5em) and (max-width: 63.9375em){
@@ -768,6 +879,9 @@ Parties Section on Home Page */
         width: 7rem;
         font-size: 1rem;
     }
+    .img-wrap{
+        width: 620px;
+    }
 
 }
 @media screen and (min-width: 54.1em) and (max-width: 60em) {
@@ -784,6 +898,10 @@ Parties Section on Home Page */
     .parties-btn{
         width: 7rem;
         font-size: 1rem;
+    }
+
+    .img-wrap{
+        width: 620px;
     }
 
 }
@@ -960,6 +1078,18 @@ Parties Section on Home Page */
         right: 1.2rem;
     }
 
+    .mps-party{
+        font-size: 1.4rem;
+    }
+
+    .resultBox{
+        // margin-left: 23%;
+    }
+
+    .mps-box{
+        width: 100%;
+    }
+
 }
 
 
@@ -1088,6 +1218,11 @@ Parties Section on Home Page */
         right: 30px;
         bottom: 30px;
     }
+    /*  MAP  */
+    // .resultBox{
+    //     width: 46rem;
+    //     margin: 0 auto;
+    // }
 
 }
 
@@ -1199,6 +1334,13 @@ Parties Section on Home Page */
         width: 70%;
     }
 
+    // /* MAP */
+
+    // .resultBox{
+    //     width: 46rem;
+    //     margin: 0 auto;
+    // }
+
 
 }
 
@@ -1245,6 +1387,10 @@ a:hover > .main-btn{
 a:active > .main-btn{
     border: none;
     background-color: $primary-green-hover;
+}
+
+.mob-hidding{
+    display: none;
 }
 
 
