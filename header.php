@@ -1,4 +1,3 @@
-<!--Include sessions to check if user is logged in or has pressed logged out-->
 <?php include 'session.php' ?>
 <?php include 'newsletter.php' ?>
 <!doctype html>
