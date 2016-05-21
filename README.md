@@ -2,7 +2,5 @@
 
 Project to get youth interested in voting and politics in canada
 
-
-CHange nub 2
-
-CHange nub 3
+This project makes use of highcharts js in the profile page,
+as well as using password hashing with sha256 for security on passwords in the database.
