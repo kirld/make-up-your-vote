@@ -155,7 +155,8 @@ p{
 	border: 1px solid #fff;
 }
 
-.newsletterInput{
+.newsletterInput,
+.newsletterInput:focus {
 	width: 75%;
 	float: left;
 	background: transparent;

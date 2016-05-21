@@ -1,8 +1,9 @@
 
 <?php
-if (isset($_POST["submit"]) && $_POST["email"] != "") {
-        // Everything is ok so send email
-        sendMail($_POST["email"]);
+if (isset($_POST["newsletterSubmit"]) && $_POST["email"] != "") {
+    // Everything is ok so send email
+    sendMail($_POST["email"]);
+    $successNewsletter = "You are now subscribed!";
 } 
 function sendMail($email) {
     $to = $email;
@@ -87,7 +88,7 @@ function sendMail($email) {
     $headers .= "From: makeyourvoteup.com\r\n";
 
     $sendNewsletter = mail($to, $subject,  $newsletter, $headers); // Send email
-
-}
+    
+    }
 ?>
 
