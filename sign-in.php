@@ -1,3 +1,5 @@
+<?php include 'header.php' ?>
+<?php include 'navigation.php' ?> 
 <?php include("partials/db-connection.php") ?>
 <?php
    //if no connection to database is made, error will display
@@ -25,11 +27,9 @@
                     $password = $hashed = hash("sha256", $password);
                     
                     if($password === $securePassword){
-                        //start session
-                        session_start();
                         $_SESSION['user'] = $email;
                         //send to profile
-                        header("Location: profile.php");
+                        echo "<script> location.replace('profile.php'); </script>";
                     }
                     else {
                       $signInMessage = "<div>";
@@ -50,9 +50,7 @@
     
     
 ?>
-
-<?php include 'header.php' ?>
-<?php include 'navigation.php' ?>         
+        
 <div class="row">    
 
     <div class="small-12 medium-push-3 medium-6 columns">
@@ -78,11 +76,4 @@
     </div>
     
 </div>
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/what-input/what-input.js"></script>
-<script src="bower_components/foundation-sites/dist/foundation.js"></script>
-<script src="js/app.js"></script>
-<script src="js/main.js"></script>
-</body>
-</html> 
+<?php include 'footer.php' ?>
