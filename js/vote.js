@@ -8,7 +8,7 @@ comparePartyData = [
     "id": 1,
     "shortName":"Liberal",
 	"partyName":"Liberal Party Of Canada",
-    "logo":"/img/logo/liberal.jpg",
+    "logo":"./img/parties/liberal-logo.jpg",
     "counter": [],
     "category": [
             {cd: "001", name: "Health", content: "Would invest in providing improved home care for seniors, work with the provinces to lower prescription drugs costs, and create a more flexible and accessible Employment Insurance Compassionate Care Benefit."},
@@ -32,14 +32,14 @@ comparePartyData = [
     "id": 2,
     "shortName":"Conservative",
 	"partyName":"Conservative Party of Canada",
-    "logo":"/img/logo/conservative.jpg",
+    "logo":"./img/parties/conservative-logo.jpg",
     "counter": [],
     "category": [
             {cd: "001", name: "Health", content: "Would increase annual health funding to the provinces to grow in line with nominal GDP, beginning in 2017-18."},
             {cd: "002", name: "Taxes", content: "Plan on doubling the child fitness tax credit to $1000 immediately, and pledge to create an adult fitness tax credit worth $500 once the federal budget is balanced."},
             {cd: "003", name: "Jobs/Economy", content: "Would aim to create 1.3 million new jobs by 2020, reduce the small business tax rate from 11% to 9% by 2019, and provide approximately $670 million in federal tax relief to Canadian seniors over the age of 70 between 2015 and 2020."},
             {cd: "004", name: "Democracy", content: "Would reform the Senate including term limits and elections, and expand the House of Commons."},
-            {cd: "005", name: "Education", content: "If re-elected, a Conservative government would increase the number of computers in schools to have more Canadians engage in the digital economy. The Conservatives will work with business and industry associations in order to better align with postsecondary institutions."},
+            {cd: "005", name: "Education", content: "Would increase the number of computers in schools to have more Canadians engage in the digital economy, and work with business and industry associations in order to better align with postsecondary institutions."},
             {cd: "006", name: "Seniors", content: "Would extend a retraining program for older workers, increase the Guaranteed Income Supplement, and change sentencing laws to take into account age and vulnerability for crimes against seniors."},
             {cd: "007", name: "Environment", content: "Would reduce Canada's emissions to 30% below 2005 levels by 2030. In 2014, the Conservative government contributed $300 million to the UN Green Climate Fund to help developing countries fight climate change."},
             {cd: "008", name: "Crime", content: "Would clamp down on drug use in prisons, scrap the long-gun registr, revive human smuggling legislation, and pledge to make it easier to deport foreign criminals."},
@@ -55,7 +55,7 @@ comparePartyData = [
     "id": 3,
     "shortName":"Democratic",
     "partyName":"New Democratic Party",
-    "logo":"/img/logo/democratic.jpg",
+    "logo":"./img/parties/democratic-logo.jpg",
     "counter": [],
     "category": [
             {cd: "001", name: "Health", content: "Commit to six per cent escalator for health care funding, Pledges $165 million to hire more doctors and nurses, repatriate Canadian health care workers practising abroad and fix credentials for foreign doctors."},
@@ -78,7 +78,7 @@ comparePartyData = [
     "id": 4,
     "shortName":"Bloc",
     "partyName":"Bloc Québécois",
-    "logo":"/img/logo/bloc.jpg",
+    "logo":"./img/parties/quebecois-logo.jpg",
     "counter": [],
     "category": [
             {cd: "001", name: "Health", content: "The Bloc Québécois would demand that Ottawa reinstate indexed healthcare transfers and Improve measures for caregivers."},
@@ -101,7 +101,7 @@ comparePartyData = [
     "id": 5,
     "shortName":"Green",
     "partyName":"Green Party of Canada",
-    "logo":"/img/logo/green.jpg",
+    "logo":"./img/parties/green-logo.jpg",
     "counter": [],
     "category": [
             {cd: "001", name: "Health", content: "Create a Canadian Disabilities Act and basic income program for the disabled, and create a national food plan that focuses on local grown, health choices."},
@@ -124,7 +124,7 @@ comparePartyData = [
     "id": 6,
     "shortName":"Libertarian",
     "partyName":"Libertarian Party of Canada",
-    "logo":"/img/logo/libertarian.jpg",
+    "logo":"./img/parties/libertarian-logo.png",
     "counter": [],
     "category": [
             {cd: "001", name: "Health", content: "Ensure that the federal government should leave the entirety of health care decisions to provincial andterritorial governments."},
@@ -256,41 +256,6 @@ VoteApp.controller('mainController', function($scope, $http) {
 
 
     }
-
-/*--------------------------------------
-    Angular HTTP post to PHP
-    http://stackoverflow.com/questions/15485354/angular-http-post-to-php-and-undefined
----------------------------------------*/
-    //Replacement of jQuery.param
-    // var serialize = function(obj, prefix) {
-    //   var str = [];
-    //   for(var p in obj) {
-    //     if (obj.hasOwnProperty(p)) {
-    //       var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
-    //       str.push(typeof v == "object" ?
-    //         serialize(v, k) :
-    //         encodeURIComponent(k) + "=" + encodeURIComponent(v));
-    //     }
-    //   }
-    //   return str.join("&");
-    // };
-
-    // VoteApp.config(function ($httpProvider) {
-    //     // send all requests payload as query string
-    //     $httpProvider.defaults.transformRequest = function(data){
-    //         if (data === undefined) {
-    //             return data;
-    //         }
-    //         return serialize(data);
-    //     };
-
-    //     // set all post requests content type
-    //     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-    // });
-
-    
-   
-
 
 });
 

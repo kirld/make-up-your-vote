@@ -26,7 +26,7 @@
 			<li><a href="index.php">HOME</a></li>
 			<li><a href="parties.php?id=1">PARTIES</a></li>
 			<li><a href="map.php">MAP</a></li>
-			<li><a href="#">COMPARE</a></li>
+			<li><a href="compare.php">COMPARE</a></li>
 		  </ul>
 		</div>
 		<div class="large-3 medium-3 hide-for-small-only columns">
