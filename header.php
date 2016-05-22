@@ -22,4 +22,4 @@
     <script src="http://code.highcharts.com/highcharts.js"></script>
 
   </head>
-  <body>
+  <body onLoad="focusOnLoad()">
