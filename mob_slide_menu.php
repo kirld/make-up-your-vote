@@ -6,18 +6,19 @@
 <div class="small-12 columns show-only-for-small no-padding">
 	<div class="mobile-menu">
 		<ul>
-			<li><a href="#">YUKON</a></li>
-			<li><a href="#">BRITISH COLUMBIA</a></li>
-			<li><a href="#">NORTHWEST TERRITORIES</a></li>
-			<li><a href="#">ALBERTA</a></li>
-			<li><a href="#">SASKATUNE</a></li>
-			<li><a href="#">MANITOBA</a></li>
-			<li><a href="#">NUNAVUT</a></li>
-			<li><a href="#">ONTARIO</a></li>
-			<li><a href="#">QUEBEC</a></li>
-			<li><a href="#">NEWBRUNSWICK</a></li>
-			<li><a href="#">NEWFOUNDLAND</a></li>
-			<li><a href="#">NOVA SCOTIA</a></li>
+			<li><a onClick="clickonProvince('yukon')" href="#">YUKON</a></li>
+			<li><a onClick="clickonProvince('bc')" href="#">BRITISH COLUMBIA</a></li>
+			<li><a onClick="clickonProvince('northTeritories')" href="#">NORTHWEST TERRITORIES</a></li>
+			<li><a onClick="clickonProvince('al')" href="#">ALBERTA</a></li>
+			<li><a onClick="clickonProvince('saskatchewan')" href="#">SASKATCHEWAN</a></li>
+			<li><a onClick="clickonProvince('manitoba')" href="#">MANITOBA</a></li>
+			<li><a onClick="clickonProvince('nunavut')" href="#">NUNAVUT</a></li>
+			<li><a onClick="clickonProvince('ontario')" href="#">ONTARIO</a></li>
+			<li><a onClick="clickonProvince('quebec')" href="#">QUEBEC</a></li>
+			<li><a onClick="clickonProvince('newbrunswick')" href="#">NEWBRUNSWICK</a></li>
+			<li><a onClick="clickonProvince('nfld')" href="#">NEWFOUNDLAND</a></li>
+			<li><a onClick="clickonProvince('pei')" href="#">PRINCE EDWARD ISLAND</a></li>
+			<li><a onClick="clickonProvince('novascotia')" href="#">NOVA SCOTIA</a></li>
 		</ul>
 	</div>
 </div>

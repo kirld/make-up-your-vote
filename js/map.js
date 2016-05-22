@@ -90,12 +90,22 @@ function clickonProvince(province) {
         html += '<div class="mps-box large-3 medium-3 small-12 columns"><ul><li class="mps-name">'+ mps.name +'</li>';
         html += '<li><img class="mps-img" src="'+ mps.img +'" alt="mps images"></li>';
         html += '<li class="mps-party">'+ mps.party +'</li></ul></div>';
+    // var liTag = document.getElementsByClassName('mps-party');
+    // if(mps.party.innerHTMl === "Liberal" ){
+    //     mps.party[0].style.backgroundColor = "red";
+    // }
+    // else if(mps.party === "NDP"){
+    //     // liTag.style.backgroundColor = "pink";
+    // }   
+    //     console.log(mps.party);
     });
     
     // add list to output container
     $('.resultBox').html(html);
 
 }
+
+
 
 function focusOnLoad(){
     colorProvince('quebec');
