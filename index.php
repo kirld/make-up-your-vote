@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
     <!-- Navigation Starts Here -->
   <div class="page-wrap">  
-  	<?php include 'navigation.php';?>
+    <?php include 'navigation.php';?>
     <!-- Start Hero Section  -->
     <section class="hero-wrap">
       <div class="row hero-img">
@@ -11,7 +11,7 @@
         
         <div class="large-6 medium-12 small-12 columns">
           <div class="inp-col">
-          <form  id="signup-form-home" action="sign-up-process.php" method="post">
+          <form  id="signup-form-home" action="partials/sign-up-process.php" method="post">
                 <!-- EMAIL ENTRY  -->  
               <input class="input-form" type="text" name="email" id="emailHome"  placeholder="Enter email" />
              <!-- PHP validation error message    -->
@@ -140,13 +140,11 @@
         <div class="large-4 medium-6 small-6 columns">
           <div class="callout par-box">
             <h4>LIBERTARIAN PARTY OF CANADA</h4>
-            <img src="img/home/libertarian.jpg" alt="libertarian party image">  
+            <img src="img/parties/libertarian-logo.png" alt="Libertarian Party of Canada">  
             <a href="parties.php?id=6"><input type="button" class="parties-btn" value="Learn more"></a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Start of Footer -->
-    <?php include 'footer.php';?>
-
+<!-- Start of Footer -->
+<?php include 'footer.php';?>

@@ -1,5 +1,4 @@
 <?php
-  //including header and dbconnection
 include 'header.php';
 include'navigation.php'; 
 include("partials/db-connection.php");
@@ -90,10 +89,6 @@ include("partials/db-connection.php");
 		<?php } ?>
 	</div>	
 </section>
-<!-- applying jquery -->
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<!-- applying highcharts.js -->
-<script src="http://code.highcharts.com/highcharts.js"></script>
 <script>
 	// putting data inside the js
 	$(function () { 
@@ -159,5 +154,4 @@ Highcharts.theme = {
 Highcharts.setOptions(Highcharts.theme);
 
 </script>
-</body>
-</html> 
+<?php include("footer.php"); ?>

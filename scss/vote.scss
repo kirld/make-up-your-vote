@@ -44,7 +44,6 @@
     h4 {
         font-family: 'Oswald';
         text-transform: uppercase;
-        padding-left: 0;
     }
 }
 
@@ -254,19 +253,15 @@ input[type="checkbox"] {
     font-size: 1.875rem;
     font-family: 'Oswald';
 }
-
-.parties-container-title {
-    padding-left: 0;
-    h1 {
-        text-transform: uppercase;
-        font-family: 'Oswald';
-        font-size: 1.875rem;
+.parties-container-title h1 {
+        margin-left: 12px;
+    text-transform: uppercase;
+    font-family: 'Oswald';
+    font-size: 1.875rem;
         font-weight: normal;
-        font-style: normal;
-        margin-left: 0;
-    }
+    font-style: normal;
+    margin-left: 0;
 }
-
 .vote-result {
     margin-top: 50px;
 }

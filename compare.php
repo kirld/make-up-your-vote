@@ -15,7 +15,7 @@ include'navigation.php';
 
 	    
 	
-<div class="map-wrap" ng-app="VoteApp">
+<div ng-app="VoteApp">
 	<div ng-controller="mainController">
 		<div class="row">
 			<div class="parties-container-title medium-12 large-12 columns">

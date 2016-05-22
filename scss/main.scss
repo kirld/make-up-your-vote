@@ -85,9 +85,9 @@ p{
 	color: $primary-blue;
 }
 
-.main-top-nav button{
+.main-top-nav form{
     font-family: 'Oswald';
-    font-size:  1.20rem;
+    font-size:  1.25rem;
     display: block;
     color: $primary-blue;
 }
@@ -95,9 +95,9 @@ p{
 .main-top-nav a:hover,
 .main-top-nav a:active,
 .main-top-nav a:focus,
-.main-top-nav button:hover,
-.main-top-nav button:active,
-.main-top-nav button:focus {
+.main-top-nav form:hover,
+.main-top-nav form:active,
+.main-top-nav form:focus {
     color: $primary-red;
 }
 
@@ -576,14 +576,14 @@ p{
 /* END OFPROGRESS BARS */
 
 
-/*SIGN UP FORM */
-
+/********SIGN UP FORM **************/
 /*Wraps the whole form*/
 .form-container {
   color: $primary-white;
   margin-top: $spacing;
   background-color: $primary-blue;
   padding: $spacing;
+  margin: $spacing * 2 0;
   
   h3 {
       color: $primary-white;
@@ -863,7 +863,7 @@ Parties Section on Home Page */
         padding-top: 1rem;
         margin-bottom: 0;
     }
-    .main-top-nav a, .main-nav a{
+    .main-top-nav a, .main-nav a, .main-top-nav form {
         font-size: 1rem; /* 16px */
     }
 
@@ -898,6 +898,10 @@ Parties Section on Home Page */
         font-size: 1.7rem;
         margin: 0;
         padding: 10px;
+    }
+    
+    .main-top-nav button {
+        font-size: 1rem;
     }
     
     .parties-img-container {
@@ -1011,7 +1015,7 @@ Parties Section on Home Page */
             margin-bottom: 0;
     }
 
-    .main-top-nav a, .main-nav a{
+    .main-top-nav a, .main-nav a, .main-top-nav form{
             font-size: 1rem; /* 16px */
     }
 
@@ -1121,7 +1125,7 @@ Parties Section on Home Page */
             margin-bottom: 0;
     }
 
-    .main-top-nav a, .main-nav a, main-top-nav button{
+    .main-top-nav a, .main-nav a, .main-top-nav form{
         font-size: 1.2rem; /* 24px */
     }
 

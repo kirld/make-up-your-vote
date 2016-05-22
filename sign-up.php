@@ -1,3 +1,4 @@
+<?php include 'newsletter.php' ?>
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -11,19 +12,18 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/app.css">
-        <!-- Font Awesome -->
+    	<!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   </head>
   <body>
 <?php include 'navigation.php' ?>  
-<?php include 'newsletter.php' ?>
 <div class="row">
     
     <div class="small-12 medium-push-3 medium-6 columns">
         <div class="form-container">
             <!-- SIGN UP NEW USER FORM -->
-            <form  id="signup-form" action="sign-up-process.php" method="post">
+            <form  id="signup-form" action="partials/sign-up-process.php" method="post">
 
                 <!--   EMAIL ENTRY    -->
                 <h3>Create a user account</h3>
@@ -60,8 +60,7 @@
             </form>
         </div>
     </div>
-    
 </div>
+<?php include 'footer.php' ?>  
 
-<?php include 'footer.php' ?>
 
