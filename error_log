@@ -1,0 +1,91 @@
+[20-May-2016 21:44:18 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home/kiralynn/public_html/make-up-your-vote/partials/db-connection.php on line 9
+[20-May-2016 21:46:37 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 29
+[20-May-2016 21:46:37 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 82
+[20-May-2016 21:46:37 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 91
+[20-May-2016 22:03:09 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:03:09 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:03:16 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:03:16 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:03:16 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:03:33 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:03:33 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:03:33 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:05:58 America/Chicago] PHP Warning:  include(session.php): failed to open stream: No such file or directory in /home/kiralynn/public_html/make-up-your-vote/header.php on line 1
+[20-May-2016 22:05:58 America/Chicago] PHP Warning:  include(session.php): failed to open stream: No such file or directory in /home/kiralynn/public_html/make-up-your-vote/header.php on line 1
+[20-May-2016 22:05:58 America/Chicago] PHP Warning:  include(): Failed opening 'session.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/kiralynn/public_html/make-up-your-vote/header.php on line 1
+[20-May-2016 22:06:53 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:06:53 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:07:32 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:07:32 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:07:35 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:07:35 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:07:35 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:09:50 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:09:50 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:09:50 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:15:33 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:15:33 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:15:33 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:15:44 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/newsletter.php:2) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 22:15:45 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:15:45 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:34:22 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 22:34:39 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:34:39 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:34:39 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:35:42 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:35:42 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:35:42 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:35:53 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 22:35:57 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:35:57 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:35:57 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:36:27 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:36:27 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:36:27 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:37:46 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 22:37:48 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:37:48 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:37:48 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 22:41:28 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 22:41:31 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 28
+[20-May-2016 22:41:31 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 81
+[20-May-2016 22:41:31 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 90
+[20-May-2016 23:05:28 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:05:28 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:06:49 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:06:49 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:08:14 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:08:14 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:08:27 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:08:27 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:08:28 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:08:28 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:09:57 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:09:57 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:10:13 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:10:13 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:15:18 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 23:28:43 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 23:38:12 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 23:38:25 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 29
+[20-May-2016 23:38:25 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:38:25 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:42:10 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 29
+[20-May-2016 23:42:10 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:42:10 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:42:25 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 23:42:47 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 29
+[20-May-2016 23:42:47 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:42:47 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:43:03 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 23:45:45 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 29
+[20-May-2016 23:45:45 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 107
+[20-May-2016 23:45:45 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 116
+[20-May-2016 23:46:01 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 23:46:19 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[20-May-2016 23:58:59 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48
+[21-May-2016 00:03:42 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 29
+[21-May-2016 00:03:42 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 104
+[21-May-2016 00:03:42 America/Chicago] PHP Warning:  join(): Invalid arguments passed in /home/kiralynn/public_html/make-up-your-vote/profile.php on line 113
+[21-May-2016 00:03:54 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kiralynn/public_html/make-up-your-vote/sign-in.php:19) in /home/kiralynn/public_html/make-up-your-vote/sign-in.php on line 48

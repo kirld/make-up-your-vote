@@ -1,4 +1,4 @@
-<?php include("partials/db-connection.php") ?>
+<?php include("db-connection.php") ?>
 <?php
     //if no connection to database is made, error will display
    if( !$connection ) {
@@ -69,7 +69,7 @@
                 $_SESSION['user'] = $email;
                 //Once user has succesfully created an account
                 // send to the compare page to begin voting
-                echo "<script> location.replace('compare.php'); </script>";
+                echo "<script> location.replace('../compare.php'); </script>";
             }
         }
     }

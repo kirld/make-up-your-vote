@@ -20,11 +20,10 @@
     <div class="large-4 medium-4 small-12 columns">
       <h3 class="footer-hd">SITEMAPS</h3>
       <ul class="footer-ul">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">PARTIES</a></li>
-        <li><a href="#">MAP</a></li>
-        <li><a href="#">COMPARE</a></li>
-        <li><a href="#">MEMBERS</a></li>
+        <li><a href="index.php">HOME</a></li>
+        <li><a href="parties.php?id=1">PARTIES</a></li>
+        <li><a href="map.php">MAP</a></li>
+        <li><a href="compare.php">COMPARE</a></li>
       </ul>
     </div>
     <div class="large-4 medium-4 small-6 columns">
@@ -44,8 +43,6 @@
 <!-- End of Footer -->
 </div>  
 <!-- End of Page Wrapper -->
-
-  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/what-input/what-input.js"></script>
   <script src="bower_components/foundation-sites/dist/foundation.js"></script>
   <script src="js/app.js"></script>

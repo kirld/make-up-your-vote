@@ -11,14 +11,14 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/app.css">
-      <!-- Font Awesome -->
+    	<!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   </head>
   <body>
+<?php include 'newsletter.php' ?>
 <?php include 'navigation.php' ?> 
 <?php include("partials/db-connection.php") ?>
-<?php include 'newsletter.php' ?>
 <?php
    //if no connection to database is made, error will display
    if( !$connection ) {
@@ -95,4 +95,11 @@
     </div>
     
 </div>
-<?php include 'footer.php' ?> 
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/what-input/what-input.js"></script>
+<script src="bower_components/foundation-sites/dist/foundation.js"></script>
+<script src="js/app.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html> 

@@ -1,3 +1,5 @@
+<?php include 'header.php' ?>
+<?php include 'navigation.php';?>
 <?php include("partials/db-connection.php") ?>
 
 <?php
@@ -40,9 +42,6 @@
     
     
 ?>
-<?php include 'header.php' ?>
-<?php include 'navigation.php';?>
-
 <div class="parties-page map-wrap">
     <div class="row">
             <div class="large-12 small-6 columns">
