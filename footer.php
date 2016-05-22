@@ -9,19 +9,21 @@
           <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
 
           <div class="nav-inp-right ft-input">
-            <input type="text" class="newsletterInput" placeholder="Newsletter subscription">
-            <a href="#" ><input type="submit" value="SIGN UP" class="newsletter-btn"></a>
+              <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="post">
+                <input type="email" name="email" class="newsletterInput"
+                       value="<?php if(isset($successNewsletter)){ echo $successNewsletter;} ?>" placeholder="Newsletter subscription" required>
+                <input type="submit" name="newsletterSubmit" value="SIGN UP" class="newsletter-btn">
+            </form>
           </div>
         </div>
     </div>
     <div class="large-4 medium-4 small-12 columns">
       <h3 class="footer-hd">SITEMAPS</h3>
       <ul class="footer-ul">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">PARTIES</a></li>
-        <li><a href="#">MAP</a></li>
-        <li><a href="#">COMPARE</a></li>
-        <li><a href="#">MEMBERS</a></li>
+        <li><a href="index.php">HOME</a></li>
+        <li><a href="parties.php?id=1">PARTIES</a></li>
+        <li><a href="map.php">MAP</a></li>
+        <li><a href="compare.php">COMPARE</a></li>
       </ul>
     </div>
     <div class="large-4 medium-4 small-6 columns">
@@ -45,6 +47,5 @@
   <script src="bower_components/foundation-sites/dist/foundation.js"></script>
   <script src="js/app.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/map.js"></script>
 </body>
 </html>
