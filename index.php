@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
     <!-- Navigation Starts Here -->
   <div class="page-wrap">  
-  	<?php include 'navigation.php';?>
+    <?php include 'navigation.php';?>
     <!-- Start Hero Section  -->
     <section class="hero-wrap">
       <div class="row hero-img">
@@ -106,47 +106,45 @@
           <div class="callout par-box">
             <h4>LIBERAL PARTY OF CANADA</h4>
             <img src="img/home/liberal.jpg" alt="liberal party image">  
-            <a href="#"><input type="button" class="parties-btn" value="Learn more"></a>
+            <a href="parties.php?id=1"><input type="button" class="parties-btn" value="Learn more"></a>
           </div>
         </div>
         <div class="large-4 medium-6 small-6 columns">
           <div class="callout par-box">
             <h4 class="child-2">CONSERVATIVE PARTY OF CANADA</h4>
             <img src="img/home/conservative.jpg" alt="conservative party image">  
-            <a href="#"><input type="button" class="parties-btn" value="Learn more"></a>
+            <a href="parties.php?id=3"><input type="button" class="parties-btn" value="Learn more"></a>
           </div>
         </div>
         <div class="large-4 medium-6 small-6 columns">
           <div class="callout par-box">
             <h4 class="child-3">NEW DEMOCRATIC PARTY</h4>
             <img src="img/home/new_democratic.jpg" alt="new democratic party image">  
-            <a href="#"><input type="button" class="parties-btn" value="Learn more"></a>
+            <a href="parties.php?id=2"><input type="button" class="parties-btn" value="Learn more"></a>
           </div>
         </div>
         <div class="large-4 medium-6 small-6 columns">
           <div class="callout par-box">
             <h4>BLOC QUEBECOIS</h4>
             <img src="img/home/bloc.jpg" alt="bloc quebecois party image">  
-            <a href="#"><input type="button" class="parties-btn" value="Learn more"></a>
+            <a href="parties.php?id=5"><input type="button" class="parties-btn" value="Learn more"></a>
           </div>
         </div>
         <div class="large-4 medium-6 small-6 columns">
           <div class="callout par-box">
             <h4>GREEN PARTY OF CANADA</h4>
             <img src="img/home/green_party.jpg" alt="green party image">  
-            <a href="#"><input type="button" class="parties-btn" value="Learn more"></a>
+            <a href="parties.php?id=4"><input type="button" class="parties-btn" value="Learn more"></a>
           </div>
         </div>
         <div class="large-4 medium-6 small-6 columns">
           <div class="callout par-box">
-            <h4>ANIMAL ALLIANCE ENVIRONMENT VOTERS PARTY</h4>
-            <img src="img/home/animal.jpg" alt="animal alliance party image">  
-            <a href="#"><input type="button" class="parties-btn" value="Learn more"></a>
+            <h4>LIBERTARIAN PARTY OF CANADA</h4>
+            <img src="img/parties/libertarian-logo.png" alt="Libertarian Party of Canada">  
+            <a href="parties.php?id=6"><input type="button" class="parties-btn" value="Learn more"></a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Start of Footer -->
-    <?php include 'footer.php';?>
-
+<!-- Start of Footer -->
+<?php include 'footer.php';?>
