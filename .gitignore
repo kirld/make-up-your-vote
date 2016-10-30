@@ -1,6 +1,6 @@
 .DS_Store
+error_log
 bower_components
 node_modules
 npm-debug.log
-css
-/nbproject/private/
+/nbproject/
