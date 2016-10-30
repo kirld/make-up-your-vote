@@ -1,8 +1,8 @@
 $( document ).ready(function() {
 
         /*******ADD NEW USER FORM VALIDATION********/
-        
-	//declare patterns 
+
+	//declare patterns
 	var emailPattern = /[a-zA-Z0-9.\-_]{1,}@[a-zA-Z0-9.\-_]{1,}[.]{1}[a-zA-Z0-9.\-_]{1,}.{0,}/;
 	//in input is invalid doNotSubmit will be equal to invalid, used to check if form should submit
 	var doNotSubmit = "";
@@ -15,21 +15,21 @@ $( document ).ready(function() {
 	  		event.preventDefault();
 	  		//return false for older browsers
 	  		return false;
-                }    
-                
-                //Check to see if inputs are invalid
-                else if(doNotSubmit !== ""){
-                        //do not submit form
-                        event.preventDefault();
-                        //return false for older browsers
-                        return false;
                 }
-                else {
-                        //if everything is good to go, send of form!
-                        return true;
-                }
-	}); 
-        
+
+            //Check to see if inputs are invalid
+            else if(doNotSubmit !== ""){
+                    //do not submit form
+                    event.preventDefault();
+                    //return false for older browsers
+                    return false;
+            }
+            else {
+                    //if everything is good to go, send of form!
+                    return true;
+            }
+	});
+
         //on Sumbit of form
 	$("#signup-form-home").submit(function(event){
 		//Check to see if inputs have to left blank
@@ -38,20 +38,20 @@ $( document ).ready(function() {
 	  		event.preventDefault();
 	  		//return false for older browsers
 	  		return false;
-                }    
-                
-                //Check to see if inputs are invalid
-                else if(doNotSubmit !== ""){
-                        //do not submit form
-                        event.preventDefault();
-                        //return false for older browsers
-                        return false;
                 }
-                else {
-                        //if everything is good to go, send of form!
-                        return true;
-                }
-	}); 
+
+              //Check to see if inputs are invalid
+              else if(doNotSubmit !== ""){
+                      //do not submit form
+                      event.preventDefault();
+                      //return false for older browsers
+                      return false;
+              }
+              else {
+                      //if everything is good to go, send of form!
+                      return true;
+              }
+	});
 
 	//INVALID INPUT
 	function invalid(id, helper){
@@ -79,7 +79,7 @@ $( document ).ready(function() {
 		//doNotSubmit is left as empty, since input is correct
 		doNotSubmit = "";
 	}
-        
+
 	//PATTERN TEST
 	function testPattern(id,pattern){
 		if(pattern.test($(id).val())){
@@ -88,67 +88,65 @@ $( document ).ready(function() {
 		}
 		else {
 			//if pattern does not match, call invalid function
-			invalid(id + "-validated", id + "Help");					
+			invalid(id + "-validated", id + "Help");
 		}
 	}
 
-
-        
         //Test password
         function testPassword(id){
-            
+
             var text = $(id).val();
 	    var upper = /[A-Z]/;
 	    var lower = /[a-z]/;
 	    var number = /\d/;
 
 	    var checkArray = [upper, lower, number];
-            
+
             $passwordSafe = true;
-            
+
             for(var i = 0; i < checkArray.length; i++) {
                 if(!checkArray[i].test(text)) { $passwordSafe = false; }
 	    }
-            
+
             if(!text.length >= 6) { $passwordSafe = false; }
-               
+
             if($passwordSafe === false){
                 invalid(id + "-validated", id + "Help");
             }
-            
+
             else {
                 valid(id + "-validated", id + "Help");
             }
         }
-        
-        
-        
-	//VALIDATE EMAIL 
+
+
+
+	//VALIDATE EMAIL
 	$("#email")
 		.keypress(function() { testPattern("#email", emailPattern); })
 		.focusout(function() { testPattern("#email", emailPattern); });
-	
-        //VALIDATE PASSWORD 
+
+        //VALIDATE PASSWORD
         $("#password")
             .keypress(function(){ testPassword("#password"); })
             .focusout(function(){ testPassword("#password"); });
-    
-        //VALIDATE EMAIL 
+
+        //VALIDATE EMAIL
         $("#emailHome")
                 .keypress(function() { testPattern("#emailHome", emailPattern); })
                 .focusout(function() { testPattern("#emailHome", emailPattern); });
-	
-        //VALIDATE PASSWORD 
+
+        //VALIDATE PASSWORD
         $("#passwordHome")
             .keypress(function(){ testPassword("#passwordHome"); })
             .focusout(function(){ testPassword("#passwordHome"); });
-    
-        
+
+
         /************************************************************
                         PARTIES PAGE BACK TO TOP
         ***************************************************************/
-    
-    
+
+
         // browser window scroll (in pixels) after which the "back to top" link is shown
 	var offset = 300,
 		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
@@ -166,5 +164,5 @@ $( document ).ready(function() {
 		 	}, scroll_top_duration
 		);
 	});
-        
+
  });//close document ready function
