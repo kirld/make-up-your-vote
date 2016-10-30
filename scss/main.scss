@@ -2,16 +2,20 @@
 	Global Variables
 ***********************/
 
+@import "vote";
+@import "_master-mixin";
+@import "_media"; /* media queries */
+
 	/* Color */
-$primary-white: #fff;	
+$primary-white: #fff;
 $primary-blue: #3399cc;
 $primary-red: #ff0066;
 $primary-green: #99cc33;
 $primary-green-hover: #7aa329;
 
-	/* Fonts */	
+	/* Fonts */
 $paragraph-font-family: 'Roboto';
-$paragraph-small-size: 1rem; /* 16px*/	
+$paragraph-small-size: 1rem; /* 16px*/
 $paragraph-normal-size: 1.125rem; /* 18px*/
 
 $h1-mob: 2.25rem; /* 36px*/
@@ -74,8 +78,15 @@ p{
 }
 
 
-.main-top-nav li{
-	display: inline-block;
+.main-top-nav {
+
+  li{
+   display: inline-block;
+
+    @include respond-to(md) {
+        margin-right: 1rem;
+    }
+  }
 }
 
 .main-top-nav a{
@@ -107,7 +118,7 @@ p{
 	/* End of Top Nav */
 
 /******************************************/
-	
+
 	/*  Begin Main Nav */
 .main-nav-wrap{
 	background-color: $primary-blue;
@@ -128,7 +139,7 @@ p{
 	color: $primary-white;
 }
 
-.main-nav a:active, 
+.main-nav a:active,
 .main-nav a:focus,
 .main-nav a:hover{
 	color: $primary-red;
@@ -148,6 +159,18 @@ p{
     color: $primary-red;
 }
 
+.help-tx {
+    text-align: center;
+
+    @include respond-to(sm){
+        text-align: left;
+        padding-left: 2.5rem;
+    }
+
+    @include respond-to(md) {
+         padding-left: 8rem;
+    }
+}
 
 .nav-inp-right{
 	position: relative;
@@ -236,7 +259,7 @@ p{
     float: right;
     // padding-right: 3rem;
     font-size: 1.2rem;
-    
+
 }
 
 .mobile-menu{
@@ -275,7 +298,7 @@ p{
 	/*height: 35rem;*/
 }
 .hero-hd{
-	
+
 	margin-top: 2.5rem;
 	font-size: 2.1rem;
 	text-align: center;
@@ -616,12 +639,12 @@ p{
 
 .parties-info-container {
     margin-top: $spacing;
-    
+
     h2{
         text-transform: uppercase;
         font-size: 1.9em;
     }
-    
+
     a:hover {
        color: $primary-white;
     }
@@ -631,17 +654,17 @@ p{
 .parties-sidebar {
     border-right: 4px solid #cccccc;
     height: 450px;
-    
-   
+
+
     ul{
         margin-left: 0;
     }
-    
+
     li {
         list-style: none;
         margin-bottom: 18px;
     }
-    
+
     a {
         text-decoration: none;
         text-transform: uppercase;
@@ -649,7 +672,7 @@ p{
         font-family: 'Oswald';
         font-size: 1.25rem;
     }
-    
+
     a:hover {
         color: $primary-red;
     }
@@ -659,7 +682,7 @@ p{
 .parties-name-container {
     background-color: $primary-blue;
     margin-bottom: $spacing;
-    
+
     h1{
         color: $primary-white;
         font-weight: 300;
@@ -667,21 +690,21 @@ p{
         text-transform: uppercase;
         font-size: 2.4em;
     }
-   
+
 }
 
 /*Wraps all the content for parties info*/
 .parties-info-container {
     margin-bottom: $spacing;
-    
+
     .main-btn {
         text-transform: uppercase;
         font-size: 0.9em;
         width: 100%;
         text-align: center;
     }
-    
-   
+
+
 }
 
 /*sets height for all images on party page*/
@@ -740,7 +763,7 @@ p{
   background-color: $primary-blue;
   padding: $spacing;
   margin: $spacing * 2 0;
-  
+
   h3 {
       color: $primary-white;
   }
@@ -760,7 +783,7 @@ p{
 
 /*checkmark colored green*/
 .validated {
-   padding-left: 5px;   
+   padding-left: 5px;
    color: $primary-white;
 }
 
@@ -803,7 +826,7 @@ p{
 *************************/
 
 /*Main Content Arear Media Query Addition */
-/* Small additional for 
+/* Small additional for
 Parties Section on Home Page */
 
 @media screen and (min-width: 26.375em) and (max-width: 31em) {
@@ -881,7 +904,7 @@ Parties Section on Home Page */
     }
     /*input[type="text"].newsletterInput::-webkit-placeholder{
         font-size: 3rem;
-    }*/ 
+    }*/
 }
 
 @media screen and (min-width: 64em){
@@ -987,7 +1010,7 @@ Parties Section on Home Page */
 }
 
 /********************************
-     MEDIA QUERY STARTS HERE 
+     MEDIA QUERY STARTS HERE
 **********************************/
 
 
@@ -1014,7 +1037,7 @@ Parties Section on Home Page */
     .nav-wrapper{
         padding-top: 2rem;
 
-    } 
+    }
     .main-top-nav{
         padding-top: 1rem;
         margin-bottom: 0;
@@ -1030,7 +1053,7 @@ Parties Section on Home Page */
         font-size: 1.5rem;
     }
 
-    /***************	
+    /***************
             CONTENT
     *****************/
     .about-us{
@@ -1055,23 +1078,23 @@ Parties Section on Home Page */
         margin: 0;
         padding: 10px;
     }
-    
+
     .main-top-nav button {
         font-size: 1rem;
     }
-    
+
     .parties-img-container {
         margin-bottom: $spacing/2;
         height: 100%;
     }
-    
+
     .parties-page-info-container {
          padding: 20px;
         h2 {
            font-size: $h2-mob;
         }
     }
-        
+
     .cd-top {
       right: 20px;
       bottom: 20px;
@@ -1080,7 +1103,7 @@ Parties Section on Home Page */
     .large-img-only{
         display: none;
     }
-    /***************    
+    /***************
         Parties Section
     *****************/
     .page-wrap{
@@ -1110,7 +1133,7 @@ Parties Section on Home Page */
 /* Medium and up */
 @media screen and (min-width: 40em) {
 
-     
+
     .hero-img{
         height: 19rem;
     }
@@ -1164,7 +1187,7 @@ Parties Section on Home Page */
 
     .nav-wrapper{
             padding-top: 2rem;
-    } 
+    }
 
     .main-top-nav{
             padding-top: 1.75rem;
@@ -1225,7 +1248,7 @@ Parties Section on Home Page */
     .large-img-only{
         display: none;
     }
-    
+
 
     /******************
            PARTIES
@@ -1236,15 +1259,15 @@ Parties Section on Home Page */
         right: 30px;
         bottom: 30px;
     }
-    
+
     .parties-sidebar a {
         font-size: 1rem;
     }
-    
+
     .parties-name-container h1 {
         font-size: 2.2rem;
     }
-    
+
     .parties-page-info-container {
         p {
             font-size: 1rem;
@@ -1373,7 +1396,7 @@ Parties Section on Home Page */
 }
 
 
-/***************** 
+/*****************
 Additional Classes
 *****************/
 

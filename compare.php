@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include'navigation.php'; 
+include 'navigation.php';
 ?>
 
 		<!-- load angularJS -->
@@ -13,15 +13,15 @@ include'navigation.php';
 	    <!-- modules and controllers-->
 	    <script src="js/vote.js"></script>
 
-	    
-	
+
+
 <div ng-app="VoteApp">
 	<div ng-controller="mainController">
 		<div class="row">
 			<div class="parties-container-title medium-12 large-12 columns">
 	             <h1>COMPARE</h1>
 	        </div>
-	   	    
+
 	   	    <div class="row">
 				<div class="parties-secondary-title medium-12 large-12 columns">
 					<h4>SELECT PARTIES TO COMPARE</h4>
@@ -35,7 +35,7 @@ include'navigation.php';
 				</select>
 			</div>
 			<!-- for desktop, tablet -->
-		
+
 			<div id="comparePartyCheckbox" class="checkbox-container row">
 				<div class="small-6 medium-6 large-6 columns" ng-repeat="_content in comparePartyData">
 					<label for="{{ _content.shortName }}"><span class="checkbox-bg"><input type="checkbox" id="{{ _content.shortName }}" ng-click="includeParty(_content.shortName)"></span>{{ _content.partyName }}</label>
@@ -47,7 +47,7 @@ include'navigation.php';
 					<h4>CATEGORIES</h4>
 				</div>
 			</div>
-			
+
 			<div class="checkbox-container row">
 				<div class="small-6 medium-4 large-4 columns" ng-repeat="(categoryId,categoryName) in compareCategory">
 					<label for="{{categoryId}}"><span class="checkbox-bg"><input type="checkbox" id="{{categoryId}}" ng-click="includeCategory(categoryName)"></span>{{categoryName}}</label>

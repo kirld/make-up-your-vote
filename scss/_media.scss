@@ -1,0 +1,16 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+$break__xs: 768px;
+$break__sm: 1024px;
+$break__md: 1200px;
+
+$breakpoints: (
+  xs: 768px,
+  sm: 1024px,
+  md: 1200px,
+);
+
+$break__xs: map-get($breakpoints, xs);
+$break__sm: map-get($breakpoints, sm);
+$break__md: map-get($breakpoints, md);

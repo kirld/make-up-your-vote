@@ -10,40 +10,44 @@
     <!-- Roboto Goole Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/main.css">
     	<!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   </head>
   <body>
 <?php include 'newsletter.php' ?>
-<?php include 'navigation.php' ?> 
+<?php include 'navigation.php' ?>
 <?php include("partials/db-connection.php") ?>
 <?php
    //if no connection to database is made, error will display
    if( !$connection ) {
         die( "Connection Failed:" . mysqli_connect_error() );
     }
-    
+
     else {
           if(isset($_POST['email']) AND !empty($_POST['password'])) {
-              
+
             $email = mysqli_real_escape_string($connection, strtolower( $_POST['email'] ));
             $password = mysqli_real_escape_string($connection, $_POST['password']);
 
              //create query to select from database table
-             $query = "SELECT * FROM user_table
-                       WHERE email = '$email'";
+            $query = "SELECT * FROM user_table
+                     WHERE email = '$email'";
+                       // var_dump($query);
             $queryResult = mysqli_query($connection, $query);
             //grab all the rows from query that match
             $rows = mysqli_num_rows($queryResult);
             //if user name and password is found in database
             if ($rows > 0) {
                 while ($row = mysqli_fetch_assoc($queryResult)) {
-        $securePassword = $row["password"];
-                    
-                    $password = $hashed = hash("sha256", $password);
-                    
+                    $securePassword = $row["password"];
+
+                    // $password = $hashed = hash("sha256", $password);
+                    var_dump($securePassword);
+
+                    // if ( $_POST['email'] === $query && $_POST['password'] === $queryPass){
                     if($password === $securePassword){
                         session_start();
                         $_SESSION['user'] = $email;
@@ -53,27 +57,27 @@
                     else {
                       $signInMessage = "<div>";
                       $signInMessage .= "<p><b>Sorry Username or Password is incorrect!</b></p>";
-                      $signInMessage .= "<div>";  
+                      $signInMessage .= "<div>";
                     }
-                 
-                } 
+
+                }
             }
             else {
                      //login incorrect message
                      $signInMessage = "<div>";
                      $signInMessage .= "<p><b>Sorry Username or Password is incorrect!</b></p>";
                      $signInMessage .= "<div>";
-            }                          
+            }
         }
     }
-    
-    
+
+
 ?>
-        
-<div class="row">    
+
+<div class="row">
 
     <div class="small-12 medium-push-3 medium-6 columns">
-        
+
         <div class="form-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
@@ -93,7 +97,7 @@
             </form>
         </div>
     </div>
-    
+
 </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -102,4 +106,4 @@
 <script src="js/app.js"></script>
 <script src="js/main.js"></script>
 </body>
-</html> 
+</html>

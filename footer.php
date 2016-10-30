@@ -41,7 +41,7 @@
   </div>
 </footer>
 <!-- End of Footer -->
-</div>  
+<!-- </div> -->
 <!-- End of Page Wrapper -->
   <script src="bower_components/what-input/what-input.js"></script>
   <script src="bower_components/foundation-sites/dist/foundation.js"></script>

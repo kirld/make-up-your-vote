@@ -4,19 +4,19 @@
    if( !$connection ) {
         die( "Connection Failed:" . mysqli_connect_error() );
     }
-    
+
     else {
-        
+
         function prevent($this, $conn) {
         stripslashes($this);
         mysqli_real_escape_string($conn, $this);
         return $this;
     }
-        
+
         //if user hits the submit button
         if(isset($_POST['submit'])){
-            
-            
+
+
             //PHP VALIDATE
             //remove input of all uneccessary characters + backslashes
             function test_input($data) {
@@ -26,11 +26,11 @@
               return $data;
             }
 
-            $username = true; 
+            $username = true;
             $email = true;
             $password = true;
 
-            //declare failure response to use to add on errors            
+            //declare failure response to use to add on errors
 
             // check if e-mail address syntax is valid or not
             if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",test_input($_POST["email"])) || empty($_POST["email"])) {
@@ -43,7 +43,7 @@
 
 
             //does it contain one uppercase, one lowercase, one number and is atleast 6 chars long
-            if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(.{6,})$/",test_input($_POST["password"])) || empty($_POST["password"])) {    
+            if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(.{6,})$/",test_input($_POST["password"])) || empty($_POST["password"])) {
                  $passwordFailure =  "<p>*Password not secure</p>";
                  $password = false;
             }
@@ -57,10 +57,10 @@
 
                 prevent($password, $connection);
                 prevent($email, $connection);
-                
-                 
+
+
                 //create insert query
-                $insert =  "INSERT INTO user_table (email,password) 
+                $insert =  "INSERT INTO user_table (email,password)
                             VALUES ('$email','$hashed')";
                 //insert into database
                 $insertResult = mysqli_query($connection,$insert);
@@ -69,7 +69,10 @@
                 $_SESSION['user'] = $email;
                 //Once user has succesfully created an account
                 // send to the compare page to begin voting
-                echo "<script> location.replace('../compare.php'); </script>";
+
+
+                // echo "<script> location.replace('../index.php'); </script>";
+                header('Location: //localhost/vote-up/index.php');
             }
         }
     }
